@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="hamsalah">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>منصة سهلتهالك بخطوه | الصف الأول الثانوي</title>
+    <!-- Dynamic Site Icon (Favicon) powered by 20016.png -->
+    <link id="dynamic-favicon" rel="icon" type="image/png" href="20016.png">
+    <link id="dynamic-apple-icon" rel="apple-touch-icon" href="20016.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Aref+Ruqaa:wght@700&family=Cairo:wght@600;700;800;900&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        if (window.pdfjsLib) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'Tajawal', 'sans-serif'],
+                        ruqaa: ['Aref Ruqaa', 'Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ==================== HAMSALAH WARM CREAM TO BURGUNDY PALETTE ==================== */
+        :root, [data-theme="hamsalah"] {
+            --bg-top: #f2e5cf;
+            --bg-mid: #d7bc96;
+            --bg-burgundy: #68242e;
+            --bg-deep: #43121a;
+            --card-bg: rgba(45, 13, 19, 0.88);
+            --card-solid: #381017;
+            --sticky-yellow: #f4cd6d;
+            --sticky-text: #1c130d;
+            --pin-blue: #2563eb;
+            --line-blue: #3b82f6;
+            --text-main: #fffaf0;
+            --text-muted: #e5d0b5;
+            --border-col: rgba(244, 205, 109, 0.28);
+            --accent-gold: #f4cd6d;
+        }
+        [data-theme="dark"] {
+            --bg-top: #0f172a;
+            --bg-mid: #1e1b4b;
+            --bg-burgundy: #111827;
+            --bg-deep: #070b14;
+            --card-bg: rgba(17, 24, 39, 0.92);
+            --card-solid: #111827;
+            --sticky-yellow: #facc15;
+            --sticky-text: #0f172a;
+            --pin-blue: #2563eb;
+            --line-blue: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-col: #334155;
+            --accent-gold: #facc15;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 26%, var(--bg-burgundy) 56%, var(--bg-deep) 100%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ==================== ZERO-LAG FIXED CSS WATERMARK (20016.png) ==================== */
+        .site-watermark {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url('20016.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: min(65vw, 380px);
+            opacity: 0.055;
+            mix-blend-mode: luminosity;
+        }
+
+        /* ==================== SUNBURST RAYS BEHIND PORTRAIT (LIKE 21218.jpg) ==================== */
+        .sunburst-rays {
+            background: repeating-conic-gradient(
+                from 0deg,
+                rgba(255, 255, 255, 0.14) 0deg 8deg,
+                transparent 8deg 16deg
+            );
+            mask-image: radial-gradient(circle, black 32%, transparent 70%);
+            -webkit-mask-image: radial-gradient(circle, black 32%, transparent 70%);
+        }
+
+        /* ==================== CHUNKY 3D HERO TITLE (LIKE 21218.jpg) ==================== */
+        .hamsalah-3d-title {
+            color: #ffffff;
+            text-shadow:
+                0 3px 0 #2b0b10,
+                0 6px 0 #1b0509,
+                0 10px 22px rgba(0, 0, 0, 0.55);
+            letter-spacing: -0.01em;
+        }
+
+        /* ==================== STICKY NOTES WITH PINS & TILT (EXACT 21218.jpg STYLE) ==================== */
+        .sticky-note-card {
+            background-color: var(--sticky-yellow);
+            color: var(--sticky-text);
+            border-radius: 4px;
+            box-shadow: 0 10px 22px rgba(18, 4, 7, 0.42), inset 0 -3px 0 rgba(180, 130, 30, 0.35);
+            transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s ease;
+            position: relative;
+        }
+        .sticky-note-card:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.55);
+            z-index: 20;
+        }
+        .sticky-pin {
+            width: 14px;
+            height: 14px;
+            border-radius: 9999px;
+            background: radial-gradient(circle at 35% 35%, #60a5fa, #1d4ed8 70%, #1e3a8a);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.45);
+            margin: 0 auto 4px auto;
+        }
+
+        /* ==================== SUBJECT-SPECIFIC ATMOSPHERES ==================== */
+        .theme-saffahi {
+            background: linear-gradient(135deg, #7f1d1d 0%, #450a0a 55%, #1c0505 100%);
+            border: 2px solid #ef4444;
+            color: #fff;
+        }
+        .theme-pharaonic {
+            background: linear-gradient(135deg, #291d0a 0%, #452e0d 55%, #172554 100%);
+            border: 2px solid #eab308;
+            color: #fef9c3;
+        }
+        .theme-arabic {
+            background: linear-gradient(135deg, #063729 0%, #065f46 60%, #134e4a 100%);
+            border: 2px solid #34d399;
+            color: #ecfdf5;
+        }
+        .theme-english {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #7f1d1d 100%);
+            border: 2px solid #f87171;
+            color: #f8fafc;
+        }
+        .theme-math {
+            background: linear-gradient(135deg, #090d16 0%, #1e1b4b 55%, #0c4a6e 100%);
+            border: 2px solid #38bdf8;
+            color: #e0f2fe;
+        }
+        .theme-philosophy {
+            background: linear-gradient(135deg, #1e1b2e 0%, #312e81 55%, #4c1d95 100%);
+            border: 2px solid #c084fc;
+            color: #f3e8ff;
+        }
+        .theme-french {
+            background: linear-gradient(135deg, #172554 0%, #311042 55%, #881337 100%);
+            border: 2px solid #fb7185;
+            color: #fff1f2;
+        }
+
+        /* ==================== STUDENT TIER FRAMES (BRONZE / SILVER / GOLD) ==================== */
+        .frame-bronze {
+            padding: 4px;
+            background: linear-gradient(135deg, #78350f, #d97706, #b45309);
+            box-shadow: 0 0 18px rgba(217, 119, 6, 0.5);
+        }
+        .frame-silver {
+            padding: 4px;
+            background: linear-gradient(135deg, #475569, #f8fafc, #94a3b8);
+            box-shadow: 0 0 22px rgba(226, 232, 240, 0.6);
+        }
+        .frame-gold {
+            padding: 5px;
+            background: linear-gradient(135deg, #b45309, #fde047, #f59e0b, #fef08a);
+            box-shadow: 0 0 28px rgba(250, 204, 21, 0.8);
+        }
+
+        .page-section {
+            display: none;
+            position: relative;
+            z-index: 10;
+        }
+        .page-section.active {
+            display: block;
+            animation: cleanFade 0.16s ease-out;
+        }
+        @keyframes cleanFade {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Fullscreen Smart Board */
+        #page-smartboard.active {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 5000;
+            background: #0a0f1c;
+            margin: 0;
+            padding: 0;
+            max-width: none;
+        }
+
+        .horn-shake {
+            animation: hornShake 0.4s ease-in-out;
+        }
+        @keyframes hornShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-6deg) scale(1.06); }
+            50% { transform: rotate(6deg) scale(1.06); }
+            75% { transform: rotate(-4deg); }
+        }
+
+        .textbook-content h3 {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-top: 1.1rem;
+            margin-bottom: 0.45rem;
+        }
+        .textbook-content p { line-height: 1.9; margin-bottom: 0.75rem; }
+        .textbook-callout {
+            background: rgba(244, 205, 109, 0.14);
+            border-right: 4px solid var(--accent-gold);
+            padding: 0.85rem 1rem;
+            border-radius: 0.75rem;
+            margin: 0.85rem 0;
+        }
+    </style>
+</head>
+<body class="flex flex-col justify-between selection:bg-amber-400 selection:text-slate-950">
+
+    <!-- ==================== ZERO-LAG CSS WATERMARK ==================== -->
+    <div class="site-watermark" aria-hidden="true"></div>
+
+    <!-- ==================== WEB AUDIO ELEMENTS (REAL HORN SOUND FROM CDN + FALLBACK) ==================== -->
+    <audio id="ext-horn-audio" preload="auto" crossorigin="anonymous">
+        <source src="https://actions.google.com/sounds/v1/transportation/car_horn_double.ogg" type="audio/ogg">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="ext-chime-audio" preload="auto" crossorigin="anonymous">
+        <source src="https://actions.google.com/sounds/v1/cartoon/magic_chime.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- ==================== ULTRA-FAST LOADING SCREEN (0.8s + INSTANT ENTER) ==================== -->
+    <div id="platform-loader" class="fixed inset-0 z-[12000] flex flex-col items-center justify-center bg-gradient-to-b from-[#f2e5cf] via-[#68242e] to-[#2e0b11] text-white p-6 text-center transition-opacity duration-300">
+        <div class="max-w-sm w-full space-y-5">
+            <div class="relative w-28 h-28 mx-auto">
+                <div class="absolute inset-0 rounded-full border-4 border-amber-300/40 border-t-amber-300 animate-spin"></div>
+                <img src="20016.png" onerror="this.onerror=null; this.src='https://placehold.co/160x160/1a0508/f4cd6d?text=HA';" alt="أيقونة المنصة" class="w-full h-full rounded-full object-contain bg-black/80 p-2 border-2 border-amber-300 shadow-xl">
+            </div>
+
+            <div class="space-y-1">
+                <div class="font-ruqaa text-3xl text-amber-300 drop-shadow">سهلتهالك بخطوه</div>
+                <p id="loader-status" class="text-xs font-bold text-amber-100/90">جاري تجهيز المنصة بأعلى سرعة...</p>
+            </div>
+
+            <div class="w-full h-2.5 rounded-full bg-black/40 overflow-hidden p-0.5 border border-amber-300/30">
+                <div id="loader-bar" class="h-full rounded-full bg-amber-300 transition-all duration-150" style="width: 30%;"></div>
+            </div>
+
+            <button type="button" onclick="launchPlatformWithSound()" class="w-full py-3.5 px-6 rounded-2xl bg-[#f4cd6d] hover:bg-amber-300 text-[#2b0b10] font-black text-base shadow-xl transition active:scale-95 flex items-center justify-center gap-2.5">
+                <i class="fa-solid fa-volume-high text-lg"></i>
+                <span>ابدأ المذاكرة الآن</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ==================== MAINTENANCE OVERLAY ==================== -->
+    <div id="maintenance-overlay" class="fixed inset-0 z-[10050] hidden flex-col items-center justify-center bg-black/95 p-6 text-center">
+        <div class="max-w-md space-y-4 p-8 rounded-3xl bg-[#381017] border-2 border-amber-400 shadow-2xl">
+            <i class="fa-solid fa-screwdriver-wrench text-4xl text-amber-400"></i>
+            <h2 class="text-2xl font-black text-white">تحديث شامل جارٍ على منصة سهلتهالك بخطوه</h2>
+            <p class="text-sm text-amber-100/80">يقوم فريق تطوير تيم القدوه (Hassanelngar) برفع التحديثات الجديدة الآن.</p>
+            <button onclick="openAuthModal('developer')" class="px-5 py-2.5 rounded-xl bg-amber-400 text-slate-950 font-black text-xs">دخول المشرف</button>
+        </div>
+    </div>
+
+    <!-- ==================== GENERAL NOTIFICATION TOAST ==================== -->
+    <div id="app-toast" class="fixed bottom-5 right-5 z-[10080] hidden max-w-xs bg-[#2b0b10]/95 backdrop-blur-md border border-amber-400/50 rounded-2xl p-3.5 shadow-2xl text-white">
+        <div class="flex items-start gap-2.5">
+            <i class="fa-solid fa-bell text-amber-400 mt-0.5"></i>
+            <div class="flex-1">
+                <h4 id="toast-title" class="text-xs font-black text-amber-300">إشعار</h4>
+                <p id="toast-body" class="text-xs text-white/90 mt-0.5 leading-relaxed"></p>
+            </div>
+            <button onclick="document.getElementById('app-toast').classList.add('hidden')" class="text-white/60 hover:text-white text-xs"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+    </div>
+
+    <!-- ==================== SMS & ADMIN WHATSAPP ALERTS ==================== -->
+    <div id="sms-popup-banner" class="fixed top-4 left-1/2 -translate-x-1/2 z-[10100] hidden w-[92%] max-w-md bg-slate-900 border-2 border-emerald-500 rounded-2xl p-4 shadow-2xl text-white">
+        <div class="flex items-center justify-between">
+            <span class="text-xs font-black text-emerald-400">كود التحقق SMS • سهلتهالك بخطوه</span>
+            <button onclick="document.getElementById('sms-popup-banner').classList.add('hidden')" class="text-slate-400 text-xs"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <p id="sms-popup-text" class="text-xs text-slate-200 mt-1"></p>
+        <div id="sms-popup-code" class="mt-2 bg-black px-3 py-1.5 rounded-xl font-mono font-black text-center text-lg tracking-widest text-amber-400">000000</div>
+    </div>
+
+    <div id="admin-alert-toast" class="fixed top-20 left-4 z-[10090] hidden max-w-sm bg-slate-900 border-2 border-amber-400 rounded-2xl p-4 shadow-2xl text-white">
+        <div class="flex items-center justify-between">
+            <span class="text-xs font-black text-amber-400">تنبيه المشرف (01050489662)</span>
+            <button onclick="document.getElementById('admin-alert-toast').classList.add('hidden')" class="text-slate-400 text-xs"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <p id="admin-alert-text" class="text-xs text-slate-200 my-2"></p>
+        <a id="admin-wa-direct-link" href="#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-xl bg-emerald-600 text-white font-black text-xs text-center block">
+            <i class="fa-brands fa-whatsapp"></i> إرسال واتساب إلى 01050489662
+        </a>
+    </div>
+
+    <!-- ==================== TOP HEADER (STYLED LIKE 21218.jpg) ==================== -->
+    <header class="relative z-[4000] px-4 sm:px-8 pt-4 pb-2">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+            <!-- Right Side: Ornate Arabic Calligraphy Title + Site Icon (Like 21218.jpg) -->
+            <div onclick="playUiClick(); navigateTo('home')" class="flex items-center gap-3 cursor-pointer group">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#2b0b10] border-2 border-[#7b2833] shadow-lg overflow-hidden flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+                    <img src="20016.png" onerror="this.onerror=null; this.src='https://placehold.co/100x100/2b0b10/f4cd6d?text=HA';" alt="أيقونة الموقع" class="w-full h-full object-contain p-1">
+                </div>
+                <div>
+                    <div id="cms-brand-name" class="font-ruqaa text-2xl sm:text-3xl font-bold text-[#2b0b10] dark:text-amber-300 leading-none drop-shadow-sm">
+                        سهلتهالك بخطوه
+                    </div>
+                    <div id="cms-brand-subtitle" class="text-[11px] font-extrabold text-[#5c1d26] mt-1">
+                        الصف الأول الثانوي • الترم الأول
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Side: Circular Badges (Just like the circular icons in top-left of 21218.jpg) -->
+            <div class="flex items-center gap-2 sm:gap-2.5">
+                <!-- Klaxon Horn Button ("ذاكر يلا!") -->
+                <button type="button" id="klaxon-btn" onclick="triggerKlaxonZakerYalla()" class="w-11 h-11 rounded-full bg-[#f4cd6d] hover:bg-amber-300 text-[#2b0b10] border-2 border-[#7b2833]/30 shadow-md flex items-center justify-center text-base transition active:scale-90" title="كلاكس: ذاكر يلا!">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </button>
+
+                <!-- Sound Toggle Circle -->
+                <button type="button" id="sound-mute-btn" onclick="toggleSoundMute()" class="w-11 h-11 rounded-full bg-white/85 hover:bg-white text-[#68242e] shadow-md flex items-center justify-center text-sm transition" title="تشغيل / كتم الصوت">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+
+                <!-- Theme Toggle Circle -->
+                <button type="button" onclick="playUiClick(); toggleHamsalahTheme()" class="w-11 h-11 rounded-full bg-white/85 hover:bg-white text-[#68242e] shadow-md flex items-center justify-center text-sm transition" title="تبديل المظهر">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </button>
+
+                <!-- Student XP / Profile Circle -->
+                <button type="button" onclick="playUiClick(); navigateTo('profile')" class="h-11 px-3.5 rounded-full bg-[#68242e] hover:bg-[#4e1820] text-[#f4cd6d] font-black text-xs shadow-md flex items-center gap-1.5 transition" title="ملفي ونتائجي">
+                    <span id="header-tier-badge">🥉</span>
+                    <span id="user-xp-badge" class="font-mono">250 XP</span>
+                </button>
+
+                <!-- Login / Admin Pill -->
+                <button type="button" onclick="playUiClick(); openAuthModal('student')" class="h-11 px-4 rounded-full bg-[#2b0b10] hover:bg-black text-white font-black text-xs shadow-md flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-user text-[#f4cd6d]"></i>
+                    <span id="header-user-name" class="hidden sm:inline">دخول</span>
+                </button>
+
+                <!-- Admin Panel Shortcut (Shown when logged in as developer) -->
+                <button type="button" id="nav-dev-btn" onclick="playUiClick(); navigateTo('developer')" class="hidden h-11 px-3.5 rounded-full bg-amber-400 text-slate-950 font-black text-xs shadow-md items-center gap-1">
+                    <i class="fa-solid fa-crown"></i>
+                    <span class="hidden md:inline">المشرف</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Navigation Pill Bar (When inside sub-pages) -->
+        <div id="subpage-nav-bar" class="hidden max-w-6xl mx-auto mt-3 pt-2 border-t border-black/10 flex items-center gap-1.5 overflow-x-auto pb-1">
+            <button onclick="playUiClick(); navigateTo('home')" data-nav="home" class="nav-btn px-3.5 py-1.5 rounded-full bg-white/80 text-[#2b0b10] text-xs font-black whitespace-nowrap">
+                <i class="fa-solid fa-house ml-1"></i> الرئيسية
+            </button>
+            <button onclick="playUiClick(); navigateTo('subjects')" data-nav="subjects" class="nav-btn px-3.5 py-1.5 rounded-full bg-white/80 text-[#2b0b10] text-xs font-black whitespace-nowrap">
+                <i class="fa-solid fa-book-open ml-1"></i> المواد ومساعد المادة
+            </button>
+            <button onclick="playUiClick(); openSubject('sciences')" class="px-3.5 py-1.5 rounded-full bg-red-700 text-white text-xs font-black whitespace-nowrap">
+                🔥 علوم السفاحي
+            </button>
+            <button onclick="playUiClick(); navigateTo('books')" data-nav="books" class="nav-btn px-3.5 py-1.5 rounded-full bg-white/80 text-[#2b0b10] text-xs font-black whitespace-nowrap">
+                📄 الكتب والتقييمات PDF
+            </button>
+            <button onclick="playUiClick(); navigateTo('smartboard')" data-nav="smartboard" class="nav-btn px-3.5 py-1.5 rounded-full bg-white/80 text-[#2b0b10] text-xs font-black whitespace-nowrap">
+                🖍️ السبورة الذكية
+            </button>
+            <button onclick="playUiClick(); navigateTo('profile')" data-nav="profile" class="nav-btn px-3.5 py-1.5 rounded-full bg-white/80 text-[#2b0b10] text-xs font-black whitespace-nowrap">
+                🏆 حسابي ونتائجي
+            </button>
+            <button onclick="playUiClick(); navigateTo('support')" data-nav="support" class="nav-btn px-3.5 py-1.5 rounded-full bg-white/80 text-[#2b0b10] text-xs font-black whitespace-nowrap">
+                🎧 الدعم الفني
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-2 relative z-10">
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 1: EXACT 21218.jpg HERO + CONNECTED STICKY-NOTE BOARD         -->
+        <!-- ===================================================================== -->
+        <section id="page-home" class="page-section active space-y-8 pb-10">
+
+            <!-- HERO CENTERPIECE (EXACT LAYOUT OF 21218.jpg) -->
+            <div class="relative flex flex-col items-center text-center pt-2 pb-4 select-none">
+                <!-- Sunburst Rays -->
+                <div class="sunburst-rays absolute top-0 w-80 h-80 sm:w-[440px] sm:h-[440px] rounded-full pointer-events-none"></div>
+
+                <!-- Minimalist Vector Doodles (Birds ~ , 4-Point Stars ✦ , Yellow Paper Airplane) -->
+                <svg class="w-10 h-6 text-[#68242e]/60 absolute top-14 right-6 sm:right-24 pointer-events-none" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                    <path d="M4 20 Q16 6 30 18 Q44 6 56 20"/>
+                </svg>
+                <svg class="w-7 h-5 text-[#68242e]/45 absolute top-28 right-16 sm:right-36 pointer-events-none" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                    <path d="M4 20 Q16 6 30 18 Q44 6 56 20"/>
+                </svg>
+                <!-- 4-Point Sparkle Star -->
+                <svg class="w-9 h-9 text-[#f4cd6d] absolute top-36 left-6 sm:left-24 drop-shadow pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/>
+                </svg>
+                <!-- Yellow Paper Airplane (Like bottom-right of hero in 21218.jpg) -->
+                <svg class="w-14 h-14 absolute bottom-12 left-2 sm:left-16 drop-shadow-lg pointer-events-none" viewBox="0 0 64 64" fill="none">
+                    <path d="M58 10L6 30L26 38L58 10Z" fill="#f4cd6d" stroke="#2b0b10" stroke-width="2.5" stroke-linejoin="round"/>
+                    <path d="M58 10L34 54L26 38L58 10Z" fill="#eab308" stroke="#2b0b10" stroke-width="2.5" stroke-linejoin="round"/>
+                    <path d="M26 38L26 52L34 44" fill="#ca8a04" stroke="#2b0b10" stroke-width="2.5" stroke-linejoin="round"/>
+                </svg>
+
+                <!-- Central Brand Portrait / Emblem Cutout (20016.png) -->
+                <div class="relative z-10 w-44 h-44 sm:w-56 sm:h-56 flex items-center justify-center">
+                    <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full bg-gradient-to-b from-[#1a0609] to-[#4a151e] border-4 border-[#f4cd6d]/80 shadow-[0_18px_40px_rgba(24,4,8,0.65)] overflow-hidden flex items-center justify-center p-3">
+                        <img src="20016.png" onerror="this.onerror=null; this.src='https://placehold.co/260x260/1a0609/f4cd6d?text=Hassan-Alnjjar';" alt="شعار حسن النجار" class="w-full h-full object-contain">
+                    </div>
+                </div>
+
+                <!-- Overlapping Chunky 3D White Headline (Exact 21218.jpg placement) -->
+                <div class="relative z-20 -mt-8 sm:-mt-10 space-y-2 max-w-xl px-2">
+                    <h1 id="cms-hero-title" class="hamsalah-3d-title text-4xl sm:text-6xl font-black leading-[1.12]">
+                        موقع منصة<br>سهلتهالك بخطوه
+                    </h1>
+                    <p class="text-base sm:text-xl font-black text-[#f4cd6d] tracking-wide drop-shadow" dir="ltr">
+                        We Don't Study Alone.
+                    </p>
+                    <p class="text-sm sm:text-lg font-extrabold text-white/95 pt-0.5">
+                        هنا هتلاقوا معانا كل حاجة مختلفة
+                    </p>
+                    <!-- Quick Voice Replay Pill -->
+                    <div class="pt-1 flex items-center justify-center gap-2">
+                        <button type="button" onclick="playWelcomeStretchVoice()" class="px-3.5 py-1 rounded-full bg-black/35 hover:bg-black/55 border border-[#f4cd6d]/40 text-[#f4cd6d] text-xs font-black transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-play"></i> اسمع: سهلتهاااالك!
+                        </button>
+                        <button type="button" onclick="triggerKlaxonZakerYalla()" class="px-3.5 py-1 rounded-full bg-[#f4cd6d] hover:bg-amber-300 text-[#2b0b10] text-xs font-black transition flex items-center gap-1.5 shadow">
+                            <i class="fa-solid fa-bullhorn"></i> كلاكس: ذاكر يلا!
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== CONNECTED STICKY-NOTE BOARD (EXACT 21218.jpg) ==================== -->
+            <div class="relative max-w-md sm:max-w-xl mx-auto pt-2 pb-6 px-2">
+                <!-- SVG Blue Connecting Lines Behind Sticky Notes (Exact match to 21218.jpg) -->
+                <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 400 320" preserveAspectRatio="none">
+                    <polyline points="110,55 290,55 110,165 290,165 200,275 110,55" fill="none" stroke="#3b82f6" stroke-width="3.5" stroke-linejoin="round"/>
+                    <line x1="290" y1="55" x2="290" y2="165" stroke="#3b82f6" stroke-width="3.5"/>
+                    <line x1="110" y1="165" x2="200" y2="275" stroke="#3b82f6" stroke-width="3.5"/>
+                    <line x1="290" y1="165" x2="200" y2="275" stroke="#3b82f6" stroke-width="3.5"/>
+                </svg>
+
+                <!-- Row 1: Two Tilted Sticky Notes -->
+                <div class="relative z-10 grid grid-cols-2 gap-6 sm:gap-10 mb-7">
+                    <button type="button" onclick="playUiClick(); navigateTo('subjects')" style="transform: rotate(-2.5deg);" class="sticky-note-card py-4 px-3 text-center cursor-pointer">
+                        <div class="sticky-pin"></div>
+                        <div class="text-lg sm:text-xl font-black">المواد الدراسية</div>
+                        <div class="text-[11px] font-bold opacity-75 mt-0.5">7 مواد + مساعد ذكي</div>
+                    </button>
+
+                    <button type="button" onclick="playUiClick(); openSubject('sciences')" style="transform: rotate(2deg);" class="sticky-note-card py-4 px-3 text-center cursor-pointer">
+                        <div class="sticky-pin"></div>
+                        <div class="text-lg sm:text-xl font-black">علوم السفاحي 🔥</div>
+                        <div class="text-[11px] font-bold opacity-75 mt-0.5">مختبر الطاقة والماء</div>
+                    </button>
+                </div>
+
+                <!-- Row 2: Two Tilted Sticky Notes -->
+                <div class="relative z-10 grid grid-cols-2 gap-6 sm:gap-10 mb-7">
+                    <button type="button" onclick="playUiClick(); navigateTo('books')" style="transform: rotate(1.8deg);" class="sticky-note-card py-4 px-3 text-center cursor-pointer">
+                        <div class="sticky-pin"></div>
+                        <div class="text-lg sm:text-xl font-black">الكتب والتقييمات</div>
+                        <div class="text-[11px] font-bold opacity-75 mt-0.5">ملفات PDF + محرر</div>
+                    </button>
+
+                    <button type="button" onclick="playUiClick(); navigateTo('smartboard')" style="transform: rotate(-2deg);" class="sticky-note-card py-4 px-3 text-center cursor-pointer">
+                        <div class="sticky-pin"></div>
+                        <div class="text-lg sm:text-xl font-black">السبورة الذكية</div>
+                        <div class="text-[11px] font-bold opacity-75 mt-0.5">شرح وكتابة سريعة</div>
+                    </button>
+                </div>
+
+                <!-- Row 3: Wide Bottom Sticky Note -->
+                <div class="relative z-10 flex justify-center">
+                    <button type="button" onclick="playUiClick(); navigateTo('profile')" style="transform: rotate(-1.2deg);" class="sticky-note-card w-4/5 sm:w-3/4 py-4 px-4 text-center cursor-pointer">
+                        <div class="sticky-pin"></div>
+                        <div class="text-lg sm:text-xl font-black">حسابي وتقرير نتائجي</div>
+                        <div class="text-[11px] font-bold opacity-75 mt-0.5">الإطار البرونزي والفضي والذهبي + كود الطالب</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Subjects Quick Cards Strip -->
+            <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between px-1">
+                    <h2 class="text-lg sm:text-xl font-black text-[#f4cd6d]"><i class="fa-solid fa-layer-group ml-1.5"></i> عوالم المواد الدراسية (الترم الأول)</h2>
+                    <button onclick="playUiClick(); navigateTo('support')" class="text-xs font-black text-white/85 hover:text-[#f4cd6d] underline">الدعم الفني وحل المشاكل</button>
+                </div>
+                <div id="home-subjects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5"></div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 2: SUBJECTS + CUSTOM THEME + SUBJECT AI ASSISTANT + MEDIA      -->
+        <!-- ===================================================================== -->
+        <section id="page-subjects" class="page-section space-y-5 pb-10">
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-[#2b0b10]/90 p-4 rounded-2xl border border-amber-400/25">
+                <div>
+                    <h2 class="text-base sm:text-lg font-black text-white">عوالم المواد الدراسية (الترم الأول)</h2>
+                    <p class="text-xs text-amber-100/75">اختر المادة لتتغير هوية الصفحة + اسأل مساعد المادة الذكي</p>
+                </div>
+                <div id="subject-selector-pills" class="flex flex-wrap gap-1.5"></div>
+            </div>
+
+            <div id="active-subject-header" class="rounded-3xl p-6 sm:p-8 shadow-xl"></div>
+            <div id="subject-resources-bar" class="hidden bg-[#2b0b10]/95 border border-amber-400/30 rounded-3xl p-5 space-y-3"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+                <div class="lg:col-span-4 space-y-4">
+                    <div id="units-sidebar-container" class="space-y-3 bg-[#2b0b10]/90 p-4 rounded-3xl border border-amber-400/25"></div>
+
+                    <!-- DEDICATED SMART SUBJECT ASSISTANT -->
+                    <div class="bg-[#2b0b10]/95 border-2 border-[#f4cd6d]/50 rounded-3xl p-4 space-y-3 shadow-xl">
+                        <div class="flex items-center gap-2 border-b border-white/10 pb-2.5">
+                            <div class="w-9 h-9 rounded-xl bg-[#f4cd6d]/20 text-[#f4cd6d] flex items-center justify-center text-base">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div>
+                                <h4 id="assistant-title" class="text-xs sm:text-sm font-black text-white">مساعد المادة الذكي</h4>
+                                <span class="text-[10px] text-emerald-400 font-bold">متصل وجاهز للشرح والتلخيص</span>
+                            </div>
+                        </div>
+
+                        <div id="assistant-chat-box" class="h-44 overflow-y-auto space-y-2 p-2.5 rounded-2xl bg-black/40 border border-white/10 text-xs"></div>
+
+                        <div class="flex flex-wrap gap-1.5">
+                            <button onclick="playUiClick(); askSubjectAssistant('لخص لي هذا الدرس في نقاط سريعة')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#f4cd6d] hover:text-slate-950 text-[10px] font-bold transition">✨ لخص الدرس</button>
+                            <button onclick="playUiClick(); askSubjectAssistant('أعطني أهم سؤال متوقع في الامتحان')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#f4cd6d] hover:text-slate-950 text-[10px] font-bold transition">🎯 سؤال امتحان</button>
+                        </div>
+
+                        <div class="flex gap-1.5">
+                            <input type="text" id="assistant-user-input" onkeydown="if(event.key==='Enter') sendAssistantCustomMsg()" placeholder="اسأل مساعد المادة..." class="flex-1 bg-black/50 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                            <button onclick="playUiClick(); sendAssistantCustomMsg()" class="px-3.5 py-2 rounded-xl bg-[#f4cd6d] text-slate-950 text-xs font-black"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="lesson-viewer-container" class="lg:col-span-8 bg-[#2b0b10]/95 p-5 sm:p-8 rounded-3xl border border-amber-400/25 space-y-6"></div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 3: STUDENT PROFILE, TIER FRAMES & PERFORMANCE REPORT CARD     -->
+        <!-- ===================================================================== -->
+        <section id="page-profile" class="page-section space-y-6 pb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-4 bg-[#2b0b10]/95 border border-amber-400/30 rounded-3xl p-6 text-center space-y-4 shadow-xl">
+                    <div class="relative w-28 h-28 mx-auto">
+                        <div id="student-avatar-frame" class="w-full h-full rounded-full frame-bronze">
+                            <img id="student-avatar-img" src="https://api.dicebear.com/7.x/avataaars/svg?seed=ElQodwaStudent" alt="صورة الطالب" class="w-full h-full rounded-full object-cover bg-slate-900">
+                        </div>
+                        <label for="student-photo-upload" class="absolute bottom-0 right-0 w-9 h-9 rounded-full bg-[#f4cd6d] text-slate-950 flex items-center justify-center text-xs shadow-lg cursor-pointer border-2 border-[#2b0b10]" title="تغيير الصورة">
+                            <i class="fa-solid fa-camera"></i>
+                        </label>
+                        <input type="file" id="student-photo-upload" accept="image/*" onchange="handleStudentPhotoUpload(this.files[0])" class="sr-only">
+                    </div>
+
+                    <div class="space-y-1">
+                        <div id="profile-frame-label" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-600/25 border border-amber-500/40 text-amber-300 text-xs font-black">
+                            🥉 الإطار البرونزي
+                        </div>
+                        <h2 id="profile-student-name" class="text-xl font-black text-white pt-1">طالب منصة سهلتهالك بخطوه</h2>
+                        <div class="text-xs text-amber-100/70 font-bold">الصف الأول الثانوي • الترم الأول</div>
+                    </div>
+
+                    <div class="p-3 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-amber-100/80 font-bold">كود الطالب:</span>
+                        <span id="profile-student-code" class="font-mono font-black text-sm text-[#f4cd6d] tracking-wider">SB-2026-8492</span>
+                    </div>
+
+                    <div class="space-y-1.5 text-right">
+                        <div class="flex justify-between text-xs font-black">
+                            <span class="text-amber-100/80">تطور الإسكور:</span>
+                            <span id="profile-xp-progress-text" class="text-[#f4cd6d] font-mono">250 / 500 XP</span>
+                        </div>
+                        <div class="w-full h-3 rounded-full bg-black/50 overflow-hidden">
+                            <div id="profile-xp-bar" class="h-full bg-[#f4cd6d]" style="width: 50%;"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-1 pt-2 text-[10px] font-black text-center">
+                            <div class="p-1.5 rounded-xl bg-amber-900/40 border border-amber-700/50 text-amber-300">🥉 برونزي<br>0 - 499</div>
+                            <div class="p-1.5 rounded-xl bg-slate-700/40 border border-slate-400/40 text-slate-200">🥈 فضي<br>500 - 1499</div>
+                            <div class="p-1.5 rounded-xl bg-yellow-500/20 border border-yellow-400/60 text-yellow-300">👑 ذهبي<br>1500+</div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 border-t border-white/10">
+                        <input type="text" id="profile-edit-name-inp" placeholder="تعديل اسم الطالب..." class="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2 text-xs text-white mb-2">
+                        <button onclick="playUiClick(); updateStudentProfileName()" class="w-full py-2.5 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">حفظ الاسم</button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 bg-[#2b0b10]/95 border border-amber-400/30 rounded-3xl p-6 space-y-5 shadow-xl">
+                    <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+                        <div>
+                            <h3 class="text-xl font-black text-white"><i class="fa-solid fa-chart-line text-emerald-400 ml-1"></i> تقرير الأداء ونتائج الامتحانات</h3>
+                            <p class="text-xs text-amber-100/75">يُحدَّث تلقائياً فور حل أي اختبار في الدروس</p>
+                        </div>
+                        <button onclick="playUiClick(); window.print()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-black flex items-center gap-1.5">
+                            <i class="fa-solid fa-print text-[#f4cd6d]"></i> طباعة التقرير
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 text-center">
+                            <div class="text-xs text-amber-100/75">إجمالي النقاط</div>
+                            <div id="rep-total-xp" class="text-2xl font-black text-[#f4cd6d] font-mono mt-1">250</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 text-center">
+                            <div class="text-xs text-amber-100/75">الاختبارات</div>
+                            <div id="rep-exams-count" class="text-2xl font-black text-sky-400 font-mono mt-1">0</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 text-center">
+                            <div class="text-xs text-amber-100/75">نسبة الدقة</div>
+                            <div id="rep-accuracy" class="text-2xl font-black text-emerald-400 font-mono mt-1">100%</div>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 text-center">
+                            <div class="text-xs text-amber-100/75">التقدير</div>
+                            <div id="rep-grade-label" class="text-lg font-black text-purple-300 mt-1">ممتاز 🌟</div>
+                        </div>
+                    </div>
+
+                    <div id="report-subjects-bars" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+                    <div class="overflow-x-auto rounded-2xl border border-white/10">
+                        <table class="w-full text-right text-xs">
+                            <thead class="bg-black/50 text-[#f4cd6d] font-black border-b border-white/10">
+                                <tr>
+                                    <th class="p-3">المادة</th>
+                                    <th class="p-3">الدرس</th>
+                                    <th class="p-3">الدرجة</th>
+                                    <th class="p-3">التاريخ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="report-exams-tbody" class="divide-y divide-white/10 bg-black/25"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 4: TECHNICAL SUPPORT & TICKETING                            -->
+        <!-- ===================================================================== -->
+        <section id="page-support" class="page-section space-y-6 pb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-5 bg-[#2b0b10]/95 border border-amber-400/30 rounded-3xl p-6 space-y-4">
+                    <h2 class="text-lg font-black text-white"><i class="fa-solid fa-headset text-sky-400 ml-1.5"></i> الدعم الفني وحل المشاكل</h2>
+                    <select id="sup-category" class="w-full bg-black/45 border border-white/15 rounded-xl px-3 py-2.5 text-xs font-bold text-white">
+                        <option value="مشكلة في تشغيل فيديو أو درس">🎥 مشكلة في تشغيل فيديو أو درس</option>
+                        <option value="مشكلة في الحساب أو الكود">🔐 مشكلة في الحساب أو كود الطالب</option>
+                        <option value="اقتراح إضافة ميزة جديدة">💡 اقتراح إضافة ميزة جديدة</option>
+                    </select>
+                    <input type="text" id="sup-contact" placeholder="الاسم + رقم الهاتف" class="w-full bg-black/45 border border-white/15 rounded-xl px-3 py-2.5 text-xs text-white">
+                    <textarea id="sup-details" rows="4" placeholder="اكتب تفاصيل المشكلة أو الاقتراح..." class="w-full bg-black/45 border border-white/15 rounded-xl px-3 py-2.5 text-xs text-white"></textarea>
+                    <button onclick="playUiClick(); submitSupportTicket()" class="w-full py-3 rounded-2xl bg-[#f4cd6d] text-slate-950 font-black text-xs shadow-lg">إرسال البلاغ للإدارة</button>
+                </div>
+
+                <div class="lg:col-span-7 bg-[#2b0b10]/95 border border-amber-400/30 rounded-3xl p-6 space-y-4">
+                    <h3 class="text-lg font-black text-white">سجل التذاكر والردود</h3>
+                    <div id="student-tickets-list" class="space-y-3 max-h-[420px] overflow-y-auto"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 5: SCHOOL BOOKS & ASSESSMENTS + LIGHTWEIGHT PDF ANNOTATOR     -->
+        <!-- ===================================================================== -->
+        <section id="page-books" class="page-section space-y-6 pb-10">
+            <div class="bg-[#2b0b10]/95 border border-amber-400/30 rounded-3xl p-6 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-black text-white">كتب المدرسة والتقييمات الأسبوعية (PDF)</h2>
+                    <p class="text-xs text-amber-100/75">افتح أي كتاب أو تقييم في المحرر المدمج للكتابة والتظليل</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="playUiClick(); filterPdfLibrary('all')" class="px-3.5 py-2 rounded-xl bg-[#f4cd6d] text-slate-950 text-xs font-black">الكل</button>
+                    <button onclick="playUiClick(); filterPdfLibrary('book')" class="px-3.5 py-2 rounded-xl bg-white/10 text-white text-xs font-bold">الكتب</button>
+                    <button onclick="playUiClick(); filterPdfLibrary('assessment')" class="px-3.5 py-2 rounded-xl bg-white/10 text-white text-xs font-bold">التقييمات</button>
+                </div>
+            </div>
+
+            <div id="pdf-editor-studio" class="hidden bg-slate-950 border-2 border-[#f4cd6d] rounded-3xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-900 text-white p-3 sm:px-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
+                    <h3 id="pdf-studio-title" class="text-xs sm:text-sm font-black text-[#f4cd6d]">اسم الملف</h3>
+                    <div class="flex items-center gap-1.5">
+                        <button onclick="setPdfTool('pen')" class="px-2.5 py-1 rounded-lg bg-blue-600 text-xs font-bold">قلم</button>
+                        <button onclick="setPdfTool('highlighter')" class="px-2.5 py-1 rounded-lg bg-yellow-500 text-slate-950 text-xs font-bold">تظليل</button>
+                        <button onclick="setPdfTool('eraser')" class="px-2.5 py-1 rounded-lg bg-slate-700 text-xs font-bold">ممحاة</button>
+                        <input type="color" id="pdf-pen-color" value="#ef4444" onchange="pdfPenColor = this.value" class="w-6 h-6 bg-transparent border-0 cursor-pointer">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changePdfPage(-1)" class="px-2 py-1 bg-slate-800 rounded"><i class="fa-solid fa-chevron-right"></i></button>
+                        <span id="pdf-page-indicator" class="font-mono text-xs text-[#f4cd6d]">1 / 1</span>
+                        <button onclick="changePdfPage(1)" class="px-2 py-1 bg-slate-800 rounded"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button onclick="exportAnnotatedPdfPage()" class="px-3 py-1 rounded-lg bg-emerald-600 text-xs font-black">حفظ</button>
+                        <button onclick="closePdfStudio()" class="px-3 py-1 rounded-lg bg-rose-600 text-xs font-black">إغلاق</button>
+                    </div>
+                </div>
+                <div class="p-4 overflow-auto flex justify-center max-h-[78vh]">
+                    <div class="relative bg-white rounded-xl overflow-hidden">
+                        <canvas id="pdf-render-canvas" class="block max-w-full h-auto"></canvas>
+                        <canvas id="pdf-annotate-canvas" class="absolute inset-0 w-full h-full touch-none cursor-crosshair"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pdf-library-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 6: ULTRA-FAST ZERO-LAG VECTOR SMART BOARD                     -->
+        <!-- ===================================================================== -->
+        <section id="page-smartboard" class="page-section">
+            <div id="sb-wrapper" class="relative w-screen h-screen overflow-hidden bg-[#0a0f1c]">
+                <canvas id="smartboard-canvas" class="w-full h-full block touch-none cursor-crosshair"></canvas>
+
+                <!-- Top Bar -->
+                <div class="fixed top-3 left-3 z-[5100] flex items-center gap-1.5 bg-slate-900/95 border border-slate-700 px-3 py-1.5 rounded-full shadow-xl text-white">
+                    <button onclick="playUiClick(); navigateTo('home')" class="px-3 py-1 rounded-full bg-rose-600 hover:bg-rose-500 text-xs font-black flex items-center gap-1">
+                        <i class="fa-solid fa-right-from-bracket"></i><span>خروج</span>
+                    </button>
+                    <button onclick="sbUndo()" class="w-8 h-8 rounded-full hover:bg-slate-800 flex items-center justify-center text-xs" title="تراجع"><i class="fa-solid fa-rotate-right"></i></button>
+                    <button onclick="sbClear()" class="w-8 h-8 rounded-full hover:bg-slate-800 flex items-center justify-center text-xs text-rose-400" title="مسح"><i class="fa-solid fa-trash"></i></button>
+                    <button onclick="sbDownload()" class="w-8 h-8 rounded-full hover:bg-slate-800 flex items-center justify-center text-xs text-emerald-400" title="حفظ"><i class="fa-solid fa-download"></i></button>
+                </div>
+
+                <!-- Right Tool Pill -->
+                <div class="fixed right-3 top-1/2 -translate-y-1/2 z-[5100] flex flex-col items-center gap-2 p-2 rounded-full bg-slate-900/95 border border-slate-700 shadow-xl">
+                    <button onclick="setSbTool('pen')" id="sb-tool-pen" class="sb-tool-btn w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs"><i class="fa-solid fa-pen"></i></button>
+                    <button onclick="setSbTool('highlighter')" id="sb-tool-highlighter" class="sb-tool-btn w-9 h-9 rounded-full text-yellow-400 hover:bg-slate-800 flex items-center justify-center text-xs"><i class="fa-solid fa-highlighter"></i></button>
+                    <button onclick="setSbTool('eraser')" id="sb-tool-eraser" class="sb-tool-btn w-9 h-9 rounded-full text-slate-300 hover:bg-slate-800 flex items-center justify-center text-xs"><i class="fa-solid fa-eraser"></i></button>
+                    <div class="w-5 h-[1px] bg-slate-700"></div>
+                    <button onclick="setSbColor('#ffffff')" class="w-6 h-6 rounded-full bg-white border border-slate-500"></button>
+                    <button onclick="setSbColor('#facc15')" class="w-6 h-6 rounded-full bg-yellow-400"></button>
+                    <button onclick="setSbColor('#38bdf8')" class="w-6 h-6 rounded-full bg-sky-400"></button>
+                    <button onclick="setSbColor('#f43f5e')" class="w-6 h-6 rounded-full bg-rose-500"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================== -->
+        <!-- SECTION 7: ADMIN / DEVELOPER COMMAND CENTER                           -->
+        <!-- ===================================================================== -->
+        <section id="page-developer" class="page-section space-y-6 pb-10">
+            <div class="bg-[#2b0b10]/95 border-2 border-[#f4cd6d] rounded-3xl p-5 sm:p-8 shadow-2xl space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-4 border-b border-white/15 pb-4">
+                    <div>
+                        <h2 class="text-xl font-black text-[#f4cd6d]"><i class="fa-solid fa-crown ml-1"></i> لوحة تحكم المشرف والمطور</h2>
+                        <p class="text-xs text-amber-100/75">إضافة فيديوهات وصور وروابط + PDF + الرد على الدعم الفني + إشعارات 01050489662</p>
+                    </div>
+                    <button onclick="playUiClick(); saveAndApplyDevConfig()" class="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-black text-xs">حفظ التعديلات</button>
+                </div>
+
+                <div class="flex flex-wrap gap-2 bg-black/40 p-2 rounded-2xl">
+                    <button onclick="switchDevTab('media')" id="devtab-media" class="devtab-btn px-4 py-2 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">فيديوهات وصور وروابط</button>
+                    <button onclick="switchDevTab('pdfupload')" id="devtab-pdfupload" class="devtab-btn px-4 py-2 rounded-xl text-white font-bold text-xs">رفع PDF</button>
+                    <button onclick="switchDevTab('supportmgr')" id="devtab-supportmgr" class="devtab-btn px-4 py-2 rounded-xl text-white font-bold text-xs">بلاغات الدعم</button>
+                    <button onclick="switchDevTab('curriculum')" id="devtab-curriculum" class="devtab-btn px-4 py-2 rounded-xl text-white font-bold text-xs">إضافة دروس</button>
+                    <button onclick="switchDevTab('branding')" id="devtab-branding" class="devtab-btn px-4 py-2 rounded-xl text-white font-bold text-xs">الهوية والصيانة</button>
+                </div>
+
+                <!-- TAB 1: MEDIA -->
+                <div id="devpanel-media" class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                    <div class="lg:col-span-5 p-4 rounded-2xl bg-black/35 border border-white/10 space-y-3">
+                        <select id="admin-media-subject" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white"></select>
+                        <select id="admin-media-type" onchange="toggleAdminMediaFields()" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                            <option value="video">🎬 فيديو شرح</option>
+                            <option value="image">🖼️ صورة ملخص</option>
+                            <option value="link">🔗 رابط خارجي</option>
+                        </select>
+                        <input type="text" id="admin-media-title" placeholder="عنوان المحتوى..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                        <input type="url" id="admin-media-url" placeholder="الرابط (URL)..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white" dir="ltr">
+                        <div id="admin-media-file-box" class="hidden">
+                            <input type="file" id="admin-media-file" accept="image/*" class="w-full text-xs text-white">
+                        </div>
+                        <button type="button" onclick="adminAddMediaResource()" class="w-full py-2.5 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">نشر المحتوى</button>
+                    </div>
+                    <div class="lg:col-span-7 p-4 rounded-2xl bg-black/35 border border-white/10">
+                        <div id="admin-media-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: PDF -->
+                <div id="devpanel-pdfupload" class="hidden grid-cols-1 lg:grid-cols-12 gap-5">
+                    <div class="lg:col-span-5 p-4 rounded-2xl bg-black/35 border border-white/10 space-y-3">
+                        <select id="dev-pdf-category" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                            <option value="book">📘 كتاب المدرسة</option>
+                            <option value="assessment">📝 تقييم أسبوعي</option>
+                        </select>
+                        <select id="dev-pdf-subject" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white"></select>
+                        <input type="file" id="dev-pdf-files-input" accept=".pdf,application/pdf" multiple onchange="handlePdfFileSelection(this.files)" class="w-full text-xs text-white">
+                        <button type="button" onclick="uploadQueuedPdfFiles()" class="w-full py-2.5 rounded-xl bg-rose-600 text-white font-black text-xs">رفع PDF</button>
+                    </div>
+                    <div class="lg:col-span-7 p-4 rounded-2xl bg-black/35 border border-white/10">
+                        <div id="dev-pdf-manage-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: SUPPORT -->
+                <div id="devpanel-supportmgr" class="hidden grid-cols-1 gap-4">
+                    <div id="admin-tickets-list" class="space-y-3"></div>
+                </div>
+
+                <!-- TAB 4: CURRICULUM -->
+                <div id="devpanel-curriculum" class="hidden grid-cols-1 lg:grid-cols-12 gap-5">
+                    <div class="lg:col-span-5 p-4 rounded-2xl bg-black/35 border border-white/10 space-y-2.5">
+                        <select id="cms-sub-select" onchange="populateCmsUnits()" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white"></select>
+                        <select id="cms-unit-select" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white"></select>
+                        <input type="text" id="cms-lesson-title" placeholder="عنوان الدرس..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                        <input type="text" id="cms-lesson-video" placeholder="رابط يوتيوب..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white" dir="ltr">
+                        <textarea id="cms-lesson-body" rows="3" placeholder="شرح الدرس..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white"></textarea>
+                        <input type="text" id="cms-quiz-q" placeholder="سؤال اختبار (اختياري)..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                        <input type="text" id="cms-quiz-opts" placeholder="الخيارات مفصولة بفاصلة..." class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                        <button onclick="cmsAddLesson()" class="w-full py-2.5 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">نشر الدرس</button>
+                    </div>
+                    <div class="lg:col-span-7 p-4 rounded-2xl bg-black/35 border border-white/10">
+                        <div id="cms-curriculum-tree" class="space-y-2 max-h-80 overflow-y-auto"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: BRANDING -->
+                <div id="devpanel-branding" class="hidden grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="p-4 rounded-2xl bg-black/35 border border-white/10 space-y-3">
+                        <input type="text" id="dev-inp-brand" value="سهلتهالك بخطوه" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                        <input type="text" id="dev-inp-footer" value="عمل وتطوير تيم القدوه Hassanelngar" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs text-white">
+                        <label class="flex items-center justify-between p-3 rounded-xl bg-slate-900">
+                            <span class="text-xs font-bold text-rose-400">وضع الصيانة</span>
+                            <input type="checkbox" id="dev-tog-maintenance" class="w-4 h-4">
+                        </label>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/35 border border-white/10 space-y-3">
+                        <input type="tel" id="dev-admin-phone" value="01050489662" class="w-full bg-slate-900 border border-white/15 rounded-xl px-3 py-2 text-xs font-mono text-white" dir="ltr">
+                        <button type="button" onclick="triggerAdminTelemetryAlert({ name: 'اختبار المشرف', role: 'مشرف', stuPhone: '01050489662', parentPhone: '-', method: 'اختبار مباشر' }, true)" class="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-black text-xs">
+                            اختبار واتساب 01050489662
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== AUTHENTICATION MODAL ==================== -->
+    <div id="auth-modal" class="fixed inset-0 z-[9800] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="bg-[#2b0b10] border-2 border-[#f4cd6d]/60 rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 relative text-white">
+            <button onclick="closeAuthModal()" class="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/10 hover:bg-rose-600 flex items-center justify-center text-xs"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-xl font-black text-center text-[#f4cd6d]">بوابة الدخول • سهلتهالك بخطوه</h3>
+
+            <div class="grid grid-cols-3 gap-1.5 bg-black/40 p-1.5 rounded-2xl text-xs font-black">
+                <button onclick="switchAuthRole('student')" id="role-tab-student" class="py-2 rounded-xl bg-[#f4cd6d] text-slate-950">طالب</button>
+                <button onclick="switchAuthRole('teacher')" id="role-tab-teacher" class="py-2 rounded-xl text-white/75">معلم</button>
+                <button onclick="switchAuthRole('developer')" id="role-tab-developer" class="py-2 rounded-xl text-white/75">مشرف</button>
+            </div>
+
+            <div id="auth-form-student" class="space-y-3">
+                <input type="text" id="stu-name-inp" placeholder="اسم الطالب ثلاثي" class="w-full bg-black/45 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs">
+                <input type="tel" id="stu-phone-inp" placeholder="رقم هاتف الطالب (01xxxxxxxxx)" class="w-full bg-black/45 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs" dir="ltr">
+                <input type="tel" id="stu-parent-inp" placeholder="رقم هاتف ولي الأمر" class="w-full bg-black/45 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs" dir="ltr">
+                <div id="otp-verify-box" class="hidden space-y-2">
+                    <input type="text" id="stu-otp-inp" maxlength="6" placeholder="كود التحقق (6 أرقام)" class="w-full bg-black/60 border-2 border-emerald-500 rounded-xl px-3.5 py-2 text-center font-mono font-black">
+                    <button onclick="verifyStudentOtp()" class="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-black text-xs">تأكيد الدخول</button>
+                </div>
+                <button onclick="sendStudentSmsOtp()" class="w-full py-3 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">إرسال كود SMS</button>
+            </div>
+
+            <div id="auth-form-teacher" class="hidden space-y-3">
+                <input type="text" id="teacher-name-inp" placeholder="اسم المعلم" class="w-full bg-black/45 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs">
+                <button onclick="loginTeacher()" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-black text-xs">دخول المعلم</button>
+            </div>
+
+            <div id="auth-form-developer" class="hidden space-y-3">
+                <input type="password" id="dev-pass-inp" placeholder="كلمة مرور المطور" class="w-full bg-black/45 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs" dir="ltr">
+                <input type="password" id="dev-code-inp" placeholder="كود المطور" class="w-full bg-black/45 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs" dir="ltr">
+                <button onclick="loginDeveloper()" class="w-full py-3 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">تفعيل لوحة المشرف</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER WITH MANDATORY CREDIT ==================== -->
+    <footer class="relative z-10 bg-[#23080d]/95 border-t border-amber-400/20 py-4 px-4 mt-8">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
+            <div class="flex items-center gap-2.5">
+                <img src="20016.png" onerror="this.onerror=null; this.src='https://placehold.co/64x64/1a0609/f4cd6d?text=HA';" alt="Hassan-Alnjjar" class="w-9 h-9 rounded-full bg-black border border-[#f4cd6d]/60 object-contain p-0.5 shrink-0">
+                <div class="text-xs font-extrabold text-amber-100/90">منصة سهلتهالك بخطوه • الصف الأول الثانوي (الترم الأول)</div>
+            </div>
+            <div class="px-4 py-1.5 rounded-full bg-black/40 border border-[#f4cd6d]/40">
+                <span id="cms-footer-credit" class="text-xs font-black text-[#f4cd6d]">
+                    عمل وتطوير تيم القدوه Hassanelngar
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== ULTRA-STABLE JAVASCRIPT ENGINE ==================== -->
+    <script>
+        /* ============================================================================
+           1. DYNAMIC FAVICON GENERATOR FROM 20016.png (SO IT APPEARS AS SITE ICON)
+           ============================================================================ */
+        (function applyCircularFavicon() {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function() {
+                try {
+                    const c = document.createElement('canvas');
+                    c.width = 64; c.height = 64;
+                    const ctx = c.getContext('2d');
+                    ctx.beginPath();
+                    ctx.arc(32, 32, 30, 0, Math.PI * 2);
+                    ctx.fillStyle = '#1a0609';
+                    ctx.fill();
+                    ctx.lineWidth = 3;
+                    ctx.strokeStyle = '#f4cd6d';
+                    ctx.stroke();
+                    ctx.clip();
+                    ctx.drawImage(img, 4, 4, 56, 56);
+                    const dataUrl = c.toDataURL('image/png');
+                    document.getElementById('dynamic-favicon').href = dataUrl;
+                    document.getElementById('dynamic-apple-icon').href = dataUrl;
+                } catch (e) {}
+            };
+            img.src = '20016.png';
+        })();
+
+        /* ============================================================================
+           2. ONLINE AUDIO + WEB AUDIO API SOUND ENGINE ("سهلتهاااالك" & "ذاكر يلا!")
+           ============================================================================ */
+        let isSoundMuted = false;
+        let audioCtx = null;
+
+        function getAudioCtx() {
+            if (!audioCtx) {
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (AC) audioCtx = new AC();
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume().catch(() => {});
+            }
+            return audioCtx;
+        }
+
+        window.toggleSoundMute = function() {
+            isSoundMuted = !isSoundMuted;
+            const btn = document.getElementById('sound-mute-btn');
+            if (btn) {
+                btn.innerHTML = isSoundMuted
+                    ? '<i class="fa-solid fa-volume-xmark text-rose-600"></i>'
+                    : '<i class="fa-solid fa-volume-high text-[#68242e]"></i>';
+            }
+            if (!isSoundMuted) playUiClick();
+        };
+
+        window.playUiClick = function() {
+            if (isSoundMuted) return;
+            try {
+                const ctx = getAudioCtx();
+                if (!ctx) return;
+                const o = ctx.createOscillator();
+                const g = ctx.createGain();
+                o.type = 'sine';
+                o.frequency.setValueAtTime(580, ctx.currentTime);
+                o.frequency.exponentialRampToValueAtTime(860, ctx.currentTime + 0.05);
+                g.gain.setValueAtTime(0.06, ctx.currentTime);
+                g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+                o.connect(g); g.connect(ctx.destination);
+                o.start(); o.stop(ctx.currentTime + 0.065);
+            } catch (e) {}
+        };
+
+        function speakArabic(text, rate = 0.85, pitch = 1.1, onDone = null) {
+            if (isSoundMuted || !('speechSynthesis' in window)) {
+                if (onDone) setTimeout(onDone, 700);
+                return;
+            }
+            try {
+                window.speechSynthesis.cancel();
+                const u = new SpeechSynthesisUtterance(text);
+                const voices = window.speechSynthesis.getVoices();
+                const ar = voices.find(v => v.lang && (v.lang.includes('ar-EG') || v.lang.includes('ar')));
+                if (ar) u.voice = ar;
+                u.lang = 'ar-EG';
+                u.rate = rate;
+                u.pitch = pitch;
+                if (onDone) { u.onend = onDone; u.onerror = onDone; }
+                window.speechSynthesis.speak(u);
+            } catch (e) {
+                if (onDone) setTimeout(onDone, 700);
+            }
+        }
+
+        // Stretched Welcome Voice ("سهلتهاااالك") + Chime Audio
+        window.playWelcomeStretchVoice = function(nextCallback = null) {
+            if (isSoundMuted) { if (nextCallback) nextCallback(); return; }
+            const chime = document.getElementById('ext-chime-audio');
+            if (chime) {
+                chime.currentTime = 0;
+                chime.volume = 0.5;
+                chime.play().catch(() => {});
+            }
+            speakArabic('سَـهِّـلْـتَـهَـااااااالَـكْ بـِخَـطْـوَه!', 0.72, 1.12, nextCallback);
+        };
+
+        // Real Online Car Horn MP3/OGG + Synthesized Backup + "ذاكر يلا!" Callout
+        window.triggerKlaxonZakerYalla = function() {
+            const btn = document.getElementById('klaxon-btn');
+            if (btn) {
+                btn.classList.remove('horn-shake');
+                void btn.offsetWidth;
+                btn.classList.add('horn-shake');
+            }
+
+            if (!isSoundMuted) {
+                const extHorn = document.getElementById('ext-horn-audio');
+                let playedExt = false;
+                if (extHorn) {
+                    extHorn.currentTime = 0;
+                    extHorn.volume = 0.85;
+                    const p = extHorn.play();
+                    if (p && p.then) {
+                        playedExt = true;
+                        p.catch(() => playBackupSynthHorn());
+                    }
+                }
+                if (!playedExt) playBackupSynthHorn();
+            }
+
+            showNotification('📢 كلاكس التفوق!', 'بيب بييييب! ذااااكر يلا يا بطل! 🔥');
+            setTimeout(() => {
+                speakArabic('ذاااكِـرْ يَـلّا!', 0.92, 1.18);
+            }, 650);
+        };
+
+        function playBackupSynthHorn() {
+            try {
+                const ctx = getAudioCtx();
+                if (!ctx) return;
+                const now = ctx.currentTime;
+                [{ s: 0, d: 0.2 }, { s: 0.26, d: 0.45 }].forEach(b => {
+                    [370, 466].forEach(f => {
+                        const o = ctx.createOscillator();
+                        const g = ctx.createGain();
+                        o.type = 'sawtooth';
+                        o.frequency.setValueAtTime(f, now + b.s);
+                        g.gain.setValueAtTime(0.08, now + b.s);
+                        g.gain.exponentialRampToValueAtTime(0.001, now + b.s + b.d);
+                        o.connect(g); g.connect(ctx.destination);
+                        o.start(now + b.s); o.stop(now + b.s + b.d + 0.02);
+                    });
+                });
+            } catch (e) {}
+        }
+
+        window.launchPlatformWithSound = function() {
+            const loader = document.getElementById('platform-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => { loader.style.display = 'none'; }, 300);
+            }
+            getAudioCtx();
+            playWelcomeStretchVoice(() => {
+                setTimeout(() => triggerKlaxonZakerYalla(), 200);
+            });
+        };
+
+        // Fast 0.7s Loader Progress
+        (function() {
+            let p = 30;
+            const bar = document.getElementById('loader-bar');
+            const t = setInterval(() => {
+                p += 35;
+                if (p >= 100) { p = 100; clearInterval(t); }
+                if (bar) bar.style.width = p + '%';
+            }, 220);
+        })();
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.getVoices();
+        }
+
+        /* ============================================================================
+           3. LIGHTWEIGHT DATA & CURRICULUM (ZERO MEMORY BLOAT)
+           ============================================================================ */
+        const DEFAULT_CURRICULUM = [
+            {
+                id: 'sciences',
+                name: 'العلوم المتكاملة (السفاحي 🔥)',
+                shortDesc: 'النظام البيئي المائي والغلاف الجوي وخصائص الماء الكيميائية.',
+                icon: 'fa-fire-flame-curved',
+                themeClass: 'theme-saffahi',
+                badge: 'السفاحي 🔥',
+                assistantName: 'مساعد السفاحي في العلوم 🧪',
+                assistantGreeting: 'أهلاً بك في مختبر السفاحي! اسألني في كيمياء الماء والروابط الهيدروجينية والكثافة.',
+                assistantTips: [
+                    'قاعدة السفاحي: أقصى كثافة للماء النقي = 1 g/cm³ عند 4°C، والزاوية في جزيء الماء = 104.5°.',
+                    'سؤال امتحان: يطفو الجليد فوق الماء لأن كثافته أقل من الماء السائل بسبب الروابط الهيدروجينية.'
+                ],
+                units: [{
+                    unitName: 'الفصل الأول: النظام البيئي المائي',
+                    lessons: [{
+                        title: 'التركيب الكيميائي للماء والروابط الهيدروجينية',
+                        subtitle: 'القطبية، الزاوية 104.5°، وشذوذ الخواص',
+                        videoUrl: 'https://www.youtube.com/embed/HVT3Y3_gHGg?rel=0',
+                        body: `<div class="textbook-callout"><strong>🔥 كبسولة السفاحي:</strong> يغطي الماء نحو 70% من سطح الأرض.</div><h3>التركيب الجزيئي للماء (H₂O)</h3><p>يرتبط الأكسجين بذرتي هيدروجين برابطتين تساهميتين تحصران زاوية <strong>104.5°</strong>، وتنشأ بين الجزيئات <strong>روابط هيدروجينية</strong> ترفع درجة غليانه إلى 100°C.</p>`,
+                        quiz: [
+                            { q: 'مقدار الزاوية بين الرابطتين التساهميتين في جزيء الماء:', options: ['109.5°', '104.5°', '120°', '180°'], ans: 1 },
+                            { q: 'يصل الماء النقي لأقصى كثافة عند درجة حرارة:', options: ['0°C', '4°C', '25°C', '100°C'], ans: 1 }
+                        ]
+                    }]
+                }]
+            },
+            {
+                id: 'history',
+                name: 'التاريخ (التصميم الفرعوني 𓂀)',
+                shortDesc: 'الحضارة والتاريخ ومصادر دراسة الحضارات القديمة.',
+                icon: 'fa-ankh',
+                themeClass: 'theme-pharaonic',
+                badge: 'الفراعنة 𓇳',
+                assistantName: 'حكيم التاريخ الفرعوني 𓂀',
+                assistantGreeting: 'مرحباً بك في معبد التاريخ! اسألني عن مفهوم الحضارة والمصادر الأولية.',
+                assistantTips: ['يرى ول ديورانت أن الحضارة تبدأ حيث ينتهي الاضطراب والقلق ويستقر الإنسان.'],
+                units: [{
+                    unitName: 'الوحدة الأولى: مدخل لدراسة الحضارات',
+                    lessons: [{
+                        title: 'الحضارة والتاريخ',
+                        subtitle: 'مفهوم الحضارة وانتقالها',
+                        videoUrl: '',
+                        body: `<h3>مفهوم الحضارة</h3><p>هي ثمرة أي مجهود يقوم به الإنسان نتيجة تفاعله مع البيئة لتحسين ظروف حياته.</p>`,
+                        quiz: [{ q: 'ربط ول ديورانت بين نشأة الحضارة ووجود:', options: ['المعادن', 'الاستقرار والأمن', 'كثرة السكان', 'الموقع'], ans: 1 }]
+                    }]
+                }]
+            },
+            {
+                id: 'arabic',
+                name: 'اللغة العربية (الزخرفة الأصيلة)',
+                shortDesc: 'النحو، البلاغة، الأدب الجاهلي، والنصوص المتحررة.',
+                icon: 'fa-feather-pointed',
+                themeClass: 'theme-arabic',
+                badge: 'ديوان العرب ✨',
+                assistantName: 'نحويّ وأديب العربية 🖋️',
+                assistantGreeting: 'أهلاً بك في لغة الضاد! اسألني في كان التامة والناقصة وكاد وأخواتها.',
+                assistantTips: ['إذا اكتفت (كان) بمرفوعها وكانت بمعنى (وُجد) فهي تامة وما بعدها فاعل.'],
+                units: [{
+                    unitName: 'الوحدة الأولى: النحو',
+                    lessons: [{
+                        title: 'كان التامة والناقصة',
+                        subtitle: 'الفرق في الإعراب والمعنى',
+                        videoUrl: '',
+                        body: `<h3>القاعدة النحوية</h3><p>تأتي <strong>كان وأخواتها</strong> تامةً إذا اكتفت بمرفوعها (الفاعل)، مثل: <em>"اتقِ الله حيثما كنتَ"</em>.</p>`,
+                        quiz: [{ q: 'في "اجتهد الطالب فكان النجاح"، تُعرب (النجاح):', options: ['اسم كان', 'خبر كان', 'فاعل مرفوع', 'مفعول به'], ans: 2 }]
+                    }]
+                }]
+            },
+            {
+                id: 'english',
+                name: 'اللغة الإنجليزية (Royal London)',
+                shortDesc: 'New Hello! Term 1 — Grammar, Vocabulary & Reading.',
+                icon: 'fa-crown',
+                themeClass: 'theme-english',
+                badge: 'British 🇬🇧',
+                assistantName: 'London Grammar Tutor 🇬🇧',
+                assistantGreeting: 'Welcome! Ask me about Past Simple vs Past Continuous.',
+                assistantTips: ['Use Past Continuous (was/were + V-ing) for an ongoing action interrupted by Past Simple.'],
+                units: [{
+                    unitName: 'Unit 1: Getting Away',
+                    lessons: [{
+                        title: 'Past Simple vs. Past Continuous',
+                        subtitle: 'While / When / As',
+                        videoUrl: '',
+                        body: `<p dir="ltr" class="text-left font-bold">While / As + Past Continuous , Past Simple.</p>`,
+                        quiz: [{ q: 'While I .......... my homework, the phone rang.', options: ['did', 'was doing', 'am doing', 'done'], ans: 1 }]
+                    }]
+                }]
+            },
+            {
+                id: 'math',
+                name: 'الرياضيات (الهندسة الرقمية)',
+                shortDesc: 'الأعداد المركبة، المعادلات التربيعية، والتشابه.',
+                icon: 'fa-square-root-variable',
+                themeClass: 'theme-math',
+                badge: 'الرياضيات 📐',
+                assistantName: 'مساعد الخوارزمي 📐',
+                assistantGreeting: 'أهلاً بك! اسألني في قوى العدد التخيلي (ت).',
+                assistantTips: ['ت² = -1 ، ت³ = -ت ، ت⁴ = 1.'],
+                units: [{
+                    unitName: 'الوحدة الأولى: الجبر',
+                    lessons: [{
+                        title: 'مقدمة في الأعداد المركبة',
+                        subtitle: 'العدد التخيلي ت',
+                        videoUrl: '',
+                        body: `<p>حيث <strong>ت² = -1</strong> ، وصورة العدد المركب <strong>أ + ب ت</strong>.</p>`,
+                        quiz: [{ q: 'أبسط صورة للمقدار ت²² هي:', options: ['1', '-1', 'ت', '-ت'], ans: 1 }]
+                    }]
+                }]
+            },
+            {
+                id: 'philosophy',
+                name: 'الفلسفة والمنطق',
+                shortDesc: 'مبادئ التفكير الفلسفي وأساليبه.',
+                icon: 'fa-brain',
+                themeClass: 'theme-philosophy',
+                badge: 'الحكمة 🏛️',
+                assistantName: 'فيلسوف المنصة 🏛️',
+                assistantGreeting: 'مرحباً بك! اسألني عن أساليب التفكير الإنساني.',
+                assistantTips: ['الأسلوب العلمي يبحث في العلل القريبة، والفلسفي في العلل البعيدة.'],
+                units: [{
+                    unitName: 'الوحدة الأولى: التفكير الفلسفي',
+                    lessons: [{
+                        title: 'التفكير الإنساني وأساليبه',
+                        subtitle: 'خصائص التفكير',
+                        videoUrl: '',
+                        body: `<p>التفكير نشاط عقلي غير مرئي.</p>`,
+                        quiz: [{ q: 'الأسلوب الذي يبحث عن العلل القريبة هو:', options: ['الخرافي', 'الفلسفي', 'العلمي', 'الديني'], ans: 2 }]
+                    }]
+                }]
+            },
+            {
+                id: 'french',
+                name: 'اللغة الفرنسية',
+                shortDesc: 'Club @dos plus 1 — Se présenter et saluer.',
+                icon: 'fa-earth-europe',
+                themeClass: 'theme-french',
+                badge: 'Paris 🇫🇷',
+                assistantName: 'Professeur de Paris 🇫🇷',
+                assistantGreeting: 'Bonjour ! اسألني في التحيات وتقديم النفس.',
+                assistantTips: ['Comment tu t’appelles ? -> Je m’appelle ...'],
+                units: [{
+                    unitName: 'Unité 1: Le club de ma classe',
+                    lessons: [{
+                        title: 'Se présenter et saluer',
+                        subtitle: 'Le verbe s’appeler',
+                        videoUrl: '',
+                        body: `<p dir="ltr" class="text-left font-bold">Comment tu t'appelles ? ➔ Je m'appelle Hassan.</p>`,
+                        quiz: [{ q: 'للرد على "Comment tu t’appelles ?":', options: ['J’ai 15 ans', 'Je m’appelle Ali', 'Au Caire', 'Bien'], ans: 1 }]
+                    }]
+                }]
+            }
+        ];
+
+        const BUILTIN_PDF_DOCS = [
+            {
+                id: 'builtin_sci_book',
+                title: 'كتاب الوزارة: العلوم المتكاملة (الصف الأول الثانوي)',
+                subjectName: 'العلوم المتكاملة',
+                category: 'book',
+                pages: [{
+                    heading: 'الفصل الأول: النظام البيئي المائي',
+                    lines: [
+                        '• يغطي الماء نحو 70% من مساحة سطح الكرة الأرضية.',
+                        '• الزاوية في جزيء الماء (H₂O) تساوي 104.5°.',
+                        '• أقصى كثافة للماء النقي (1 g/cm³) عند درجة 4°C.'
+                    ]
+                }]
+            },
+            {
+                id: 'builtin_hist_eval',
+                title: 'التقييم الأسبوعي الأول — التاريخ والحضارة',
+                subjectName: 'التاريخ',
+                category: 'assessment',
+                pages: [{
+                    heading: 'أسئلة التقييم الأسبوعي',
+                    lines: [
+                        'س1: وضح مفهوم الحضارة عند المؤرخ ول ديورانت.',
+                        'س2: قارن بين المصادر الأولية والمصادر الثانوية.'
+                    ]
+                }]
+            }
+        ];
+
+        const STORAGE_KEY = 'sahaltahalak_hamsalah_v1';
+        let appState = {
+            settings: {
+                brandName: 'سهلتهالك بخطوه',
+                brandSubtitle: 'الصف الأول الثانوي • الترم الأول',
+                footerCredit: 'عمل وتطوير تيم القدوه Hassanelngar',
+                theme: 'hamsalah',
+                maintenanceMode: false,
+                adminPhone: '01050489662'
+            },
+            studentProfile: {
+                name: 'طالب منصة سهلتهالك بخطوه',
+                code: 'SB-2026-' + Math.floor(1000 + Math.random() * 9000),
+                avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=ElQodwaStudent',
+                xp: 250,
+                examResults: []
+            },
+            curriculum: JSON.parse(JSON.stringify(DEFAULT_CURRICULUM)),
+            subjectResources: [],
+            supportTickets: [{
+                id: 'TCK-101',
+                category: '💡 اقتراح إضافة ميزة جديدة',
+                contact: 'طالب أولى ثانوي',
+                details: 'تصميم الموقع وكلاكس ذاكر يلا سريع جداً وشيك!',
+                status: 'تم الرد',
+                reply: 'بالتوفيق يا بطل — تيم القدوه Hassanelngar',
+                date: 'اليوم'
+            }]
+        };
+
+        let allPdfDocuments = [...BUILTIN_PDF_DOCS];
+        let queuedPdfFiles = [];
+        let activePdfFilter = 'all';
+        let activeSubjectId = 'sciences';
+        let activeUnitIdx = 0;
+        let activeLessonIdx = 0;
+        let isDeveloperLoggedIn = false;
+        let generatedSmsOtp = null;
+        let pendingStudentData = null;
+
+        function loadState() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (raw) {
+                    const p = JSON.parse(raw);
+                    appState = {
+                        ...appState,
+                        ...p,
+                        settings: { ...appState.settings, ...(p.settings || {}) },
+                        studentProfile: { ...appState.studentProfile, ...(p.studentProfile || {}) }
+                    };
+                }
+            } catch (e) {}
+        }
+
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+            } catch (e) {}
+        }
+
+        function applyAllUI() {
+            document.getElementById('cms-brand-name').innerText = appState.settings.brandName;
+            document.getElementById('cms-brand-subtitle').innerText = appState.settings.brandSubtitle;
+            document.getElementById('cms-footer-credit').innerText = appState.settings.footerCredit;
+            document.documentElement.setAttribute('data-theme', appState.settings.theme || 'hamsalah');
+
+            const maintEl = document.getElementById('maintenance-overlay');
+            if (appState.settings.maintenanceMode && !isDeveloperLoggedIn) {
+                maintEl.classList.remove('hidden'); maintEl.classList.add('flex');
+            } else {
+                maintEl.classList.add('hidden'); maintEl.classList.remove('flex');
+            }
+
+            updateStudentProfileUI();
+            renderHomeSubjectsGrid();
+            renderSupportTickets();
+        }
+
+        window.toggleHamsalahTheme = function() {
+            const next = appState.settings.theme === 'hamsalah' ? 'dark' : 'hamsalah';
+            appState.settings.theme = next;
+            document.documentElement.setAttribute('data-theme', next);
+            saveState();
+        };
+
+        window.navigateTo = function(pageId) {
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+            const target = document.getElementById('page-' + pageId);
+            if (target) target.classList.add('active');
+
+            const subNav = document.getElementById('subpage-nav-bar');
+            if (subNav) {
+                if (pageId === 'home') subNav.classList.add('hidden');
+                else subNav.classList.remove('hidden');
+            }
+
+            if (pageId === 'smartboard') setTimeout(initSmartboardSize, 20);
+            else if (pageId === 'subjects') renderSubjectDetailView();
+            else if (pageId === 'profile') updateStudentProfileUI();
+            else if (pageId === 'books') renderPdfLibraryGrid();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        window.openSubject = function(subId) {
+            activeSubjectId = subId;
+            activeUnitIdx = 0;
+            activeLessonIdx = 0;
+            navigateTo('subjects');
+        };
+
+        /* ============================================================================
+           4. STUDENT PROFILE & TIER FRAMES
+           ============================================================================ */
+        function addStudentXp(pts) {
+            appState.studentProfile.xp = (appState.studentProfile.xp || 0) + pts;
+            saveState();
+            updateStudentProfileUI();
+        }
+
+        window.handleStudentPhotoUpload = function(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                appState.studentProfile.avatarUrl = e.target.result;
+                saveState();
+                updateStudentProfileUI();
+                showNotification('تم التحديث', 'تم حفظ صورتك الشخصية.');
+            };
+            reader.readAsDataURL(file);
+        };
+
+        window.updateStudentProfileName = function() {
+            const val = document.getElementById('profile-edit-name-inp').value.trim();
+            if (!val) return;
+            appState.studentProfile.name = val;
+            document.getElementById('header-user-name').innerText = val;
+            saveState();
+            updateStudentProfileUI();
+        };
+
+        function updateStudentProfileUI() {
+            const prof = appState.studentProfile;
+            const xp = prof.xp || 0;
+            document.getElementById('user-xp-badge').innerText = xp + ' XP';
+            document.getElementById('profile-student-name').innerText = prof.name;
+            document.getElementById('profile-student-code').innerText = prof.code;
+            document.getElementById('student-avatar-img').src = prof.avatarUrl;
+            document.getElementById('rep-total-xp').innerText = xp;
+
+            const frameEl = document.getElementById('student-avatar-frame');
+            const labelEl = document.getElementById('profile-frame-label');
+            const headerTier = document.getElementById('header-tier-badge');
+            const barEl = document.getElementById('profile-xp-bar');
+            const progText = document.getElementById('profile-xp-progress-text');
+
+            frameEl.classList.remove('frame-bronze', 'frame-silver', 'frame-gold');
+            if (xp >= 1500) {
+                frameEl.classList.add('frame-gold');
+                labelEl.innerText = '👑 الإطار الذهبي الملكي';
+                headerTier.innerText = '👑';
+                barEl.style.width = '100%';
+                progText.innerText = `${xp} XP`;
+            } else if (xp >= 500) {
+                frameEl.classList.add('frame-silver');
+                labelEl.innerText = '🥈 الإطار الفضي';
+                headerTier.innerText = '🥈';
+                barEl.style.width = Math.min(100, Math.round(((xp - 500) / 1000) * 100)) + '%';
+                progText.innerText = `${xp} / 1500 XP`;
+            } else {
+                frameEl.classList.add('frame-bronze');
+                labelEl.innerText = '🥉 الإطار البرونزي';
+                headerTier.innerText = '🥉';
+                barEl.style.width = Math.min(100, Math.round((xp / 500) * 100)) + '%';
+                progText.innerText = `${xp} / 500 XP`;
+            }
+
+            const exams = prof.examResults || [];
+            document.getElementById('rep-exams-count').innerText = exams.length;
+            const totalCorrect = exams.reduce((a, e) => a + e.score, 0);
+            const totalQs = exams.reduce((a, e) => a + e.total, 0);
+            const acc = totalQs > 0 ? Math.round((totalCorrect / totalQs) * 100) : 100;
+            document.getElementById('rep-accuracy').innerText = acc + '%';
+            document.getElementById('rep-grade-label').innerText = acc >= 85 ? 'ممتاز 🌟' : 'جيد جداً 👍';
+
+            const barsBox = document.getElementById('report-subjects-bars');
+            if (barsBox) {
+                barsBox.innerHTML = appState.curriculum.map(sub => {
+                    const se = exams.filter(e => e.subjectId === sub.id);
+                    const pct = se.length ? Math.round((se.reduce((a, b) => a + b.score, 0) / se.reduce((a, b) => a + b.total, 0)) * 100) : 0;
+                    return `<div class="p-3 rounded-2xl bg-black/35 border border-white/10 space-y-1"><div class="flex justify-between text-xs font-black"><span>${sub.name}</span><span class="text-[#f4cd6d] font-mono">${pct}%</span></div><div class="w-full h-2 rounded-full bg-black/50 overflow-hidden"><div class="h-full bg-[#f4cd6d]" style="width:${pct}%"></div></div></div>`;
+                }).join('');
+            }
+
+            const tbody = document.getElementById('report-exams-tbody');
+            if (tbody) {
+                tbody.innerHTML = exams.length === 0
+                    ? '<tr><td colspan="4" class="p-4 text-center text-white/60">لم تقم بحل أي اختبار بعد.</td></tr>'
+                    : exams.map(ex => `<tr><td class="p-3 font-black text-[#f4cd6d]">${ex.subjectName}</td><td class="p-3">${ex.lessonTitle}</td><td class="p-3 font-mono font-black text-emerald-400">${ex.score}/${ex.total}</td><td class="p-3 text-white/60">${ex.date}</td></tr>`).join('');
+            }
+        }
+
+        /* ============================================================================
+           5. SUBJECTS + SMART ASSISTANT + QUIZZES
+           ============================================================================ */
+        function renderHomeSubjectsGrid() {
+            const grid = document.getElementById('home-subjects-grid');
+            if (!grid) return;
+            grid.innerHTML = appState.curriculum.map(sub => `
+                <div onclick="playUiClick(); openSubject('${sub.id}')" class="cursor-pointer rounded-2xl p-4 ${sub.themeClass} shadow-lg hover:-translate-y-1 transition flex flex-col justify-between gap-3">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <i class="fa-solid ${sub.icon} text-lg"></i>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-black/40">${sub.badge}</span>
+                        </div>
+                        <h4 class="text-sm font-black">${sub.name}</h4>
+                        <p class="text-[11px] opacity-85 line-clamp-2">${sub.shortDesc}</p>
+                    </div>
+                    <div class="text-[11px] font-black pt-1.5 border-t border-white/15 flex justify-between">
+                        <span>ابدأ المذاكرة</span><span>←</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderSubjectDetailView() {
+            const sub = appState.curriculum.find(s => s.id === activeSubjectId) || appState.curriculum[0];
+            if (!sub) return;
+
+            document.getElementById('subject-selector-pills').innerHTML = appState.curriculum.map(s => `
+                <button onclick="playUiClick(); openSubject('${s.id}')" class="px-3 py-1.5 rounded-xl text-xs font-black transition ${s.id === activeSubjectId ? 'bg-[#f4cd6d] text-slate-950' : 'bg-white/10 text-white hover:bg-white/20'}">${s.name}</button>
+            `).join('');
+
+            const headerBox = document.getElementById('active-subject-header');
+            headerBox.className = `rounded-3xl p-6 shadow-xl ${sub.themeClass}`;
+            headerBox.innerHTML = `
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center text-2xl"><i class="fa-solid ${sub.icon}"></i></div>
+                    <div>
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-black/40">${sub.badge}</span>
+                        <h2 class="text-xl sm:text-2xl font-black mt-1">${sub.name}</h2>
+                        <p class="text-xs opacity-90 mt-0.5">${sub.shortDesc}</p>
+                    </div>
+                </div>
+            `;
+
+            const resList = (appState.subjectResources || []).filter(r => r.subjectId === sub.id);
+            const resBar = document.getElementById('subject-resources-bar');
+            if (resList.length) {
+                resBar.classList.remove('hidden');
+                resBar.innerHTML = `<h3 class="text-xs font-black text-[#f4cd6d]">مرفقات المادة (${resList.length})</h3><div class="grid grid-cols-1 sm:grid-cols-3 gap-3">${resList.map(r => r.type === 'image' ? `<div class="p-2.5 rounded-xl bg-black/40"><img src="${r.url}" class="w-full h-32 object-cover rounded-lg mb-1"><div class="text-xs font-bold">${r.title}</div></div>` : `<a href="${r.url}" target="_blank" rel="noopener" class="p-3 rounded-xl bg-black/40 hover:bg-black/60 flex items-center justify-between text-xs font-bold"><span>${r.title}</span><i class="fa-solid fa-up-right-from-square text-[#f4cd6d]"></i></a>`).join('')}</div>`;
+            } else resBar.classList.add('hidden');
+
+            document.getElementById('assistant-title').innerText = sub.assistantName || ('مساعد ' + sub.name);
+            document.getElementById('assistant-chat-box').innerHTML = `<div class="p-2.5 rounded-xl bg-white/10 text-white leading-relaxed"><strong>🤖:</strong> ${sub.assistantGreeting}</div>`;
+
+            document.getElementById('units-sidebar-container').innerHTML = sub.units.map((u, uIdx) => `
+                <div class="space-y-1.5">
+                    <div class="text-xs font-black text-[#f4cd6d]">${u.unitName}</div>
+                    ${u.lessons.map((l, lIdx) => `<button onclick="playUiClick(); activeUnitIdx=${uIdx}; activeLessonIdx=${lIdx}; addStudentXp(10); renderSubjectDetailView();" class="w-full text-right px-3 py-2 rounded-xl text-xs font-bold flex justify-between ${uIdx === activeUnitIdx && lIdx === activeLessonIdx ? 'bg-[#f4cd6d] text-slate-950' : 'bg-white/10 text-white'}"><span>${l.title}</span><i class="fa-solid fa-play"></i></button>`).join('')}
+                </div>
+            `).join('');
+
+            const unit = sub.units[activeUnitIdx] || sub.units[0];
+            const lesson = unit.lessons[activeLessonIdx] || unit.lessons[0];
+            document.getElementById('lesson-viewer-container').innerHTML = `
+                <div class="border-b border-white/15 pb-3">
+                    <span class="text-xs font-bold text-[#f4cd6d]">${unit.unitName}</span>
+                    <h2 class="text-xl sm:text-2xl font-black text-white mt-0.5">${lesson.title}</h2>
+                </div>
+                ${lesson.videoUrl ? `<div class="rounded-2xl overflow-hidden bg-black aspect-video"><iframe src="${lesson.videoUrl}" class="w-full h-full" frameborder="0" allowfullscreen></iframe></div>` : ''}
+                <div class="textbook-content text-sm">${lesson.body}</div>
+                ${lesson.quiz && lesson.quiz.length ? `
+                    <div class="pt-4 border-t border-white/15 space-y-3">
+                        <h3 class="text-base font-black text-[#f4cd6d]">اختبار الدرس</h3>
+                        ${lesson.quiz.map((qObj, qIdx) => `
+                            <div class="p-4 rounded-2xl bg-black/35 border border-white/10 space-y-2">
+                                <div class="text-xs font-black">${qIdx + 1}. ${qObj.q}</div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    ${qObj.options.map((opt, oIdx) => `<button onclick="gradeQuestion(this, '${sub.id}', '${sub.name}', '${lesson.title}', ${qIdx}, ${oIdx}, ${qObj.ans}, ${lesson.quiz.length})" class="qopt-${qIdx} text-right px-3 py-2 rounded-xl bg-white/10 hover:bg-[#f4cd6d] hover:text-slate-950 text-xs font-bold transition">${opt}</button>`).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        window.askSubjectAssistant = function(q) {
+            const sub = appState.curriculum.find(s => s.id === activeSubjectId) || appState.curriculum[0];
+            const box = document.getElementById('assistant-chat-box');
+            box.innerHTML += `<div class="p-2 rounded-xl bg-[#f4cd6d]/20 text-left font-bold"><strong>أنت:</strong> ${q}</div>`;
+            const tips = sub.assistantTips || ['راجع النقاط الأساسية وحل الاختبار!'];
+            const ans = tips[Math.floor(Math.random() * tips.length)];
+            box.innerHTML += `<div class="p-2 rounded-xl bg-emerald-500/20 text-white"><strong>🤖:</strong> ${ans}</div>`;
+            box.scrollTop = box.scrollHeight;
+        };
+
+        window.sendAssistantCustomMsg = function() {
+            const inp = document.getElementById('assistant-user-input');
+            if (!inp.value.trim()) return;
+            const v = inp.value.trim(); inp.value = '';
+            askSubjectAssistant(v);
+        };
+
+        let qScore = 0, qCount = 0;
+        window.gradeQuestion = function(btn, subId, subName, lessonTitle, qIdx, chosen, correct, total) {
+            document.querySelectorAll(`.qopt-${qIdx}`).forEach((b, i) => {
+                b.disabled = true;
+                if (i === correct) b.classList.add('bg-emerald-600', 'text-white');
+                else if (i === chosen) b.classList.add('bg-rose-600', 'text-white');
+            });
+            qCount++;
+            if (chosen === correct) { qScore++; addStudentXp(40); playUiClick(); }
+            if (qCount >= total) {
+                appState.studentProfile.examResults.unshift({ subjectId: subId, subjectName: subName, lessonTitle, score: qScore, total, date: new Date().toLocaleDateString('ar-EG') });
+                qScore = 0; qCount = 0;
+                saveState(); updateStudentProfileUI();
+                showNotification('تم تسجيل النتيجة', 'تمت إضافة درجتك في تقرير الأداء.');
+            }
+        };
+
+        /* ============================================================================
+           6. ULTRA-LIGHTWEIGHT VECTOR SMART BOARD (ZERO toDataURL LAG!)
+           ============================================================================ */
+        const sbCanvas = document.getElementById('smartboard-canvas');
+        const sbCtx = sbCanvas.getContext('2d');
+        let sbTool = 'pen', sbColor = '#38bdf8', sbDrawing = false;
+        let sbStrokes = []; // Stores lightweight coordinate arrays instead of heavy base64 images!
+        let currentStroke = null;
+
+        window.initSmartboardSize = function() {
+            const w = document.getElementById('sb-wrapper');
+            if (!w || !w.clientWidth) return;
+            sbCanvas.width = w.clientWidth;
+            sbCanvas.height = w.clientHeight;
+            redrawSmartboard();
+        };
+
+        function redrawSmartboard() {
+            sbCtx.clearRect(0, 0, sbCanvas.width, sbCanvas.height);
+            sbCtx.lineCap = 'round';
+            sbCtx.lineJoin = 'round';
+            for (const s of sbStrokes) {
+                if (s.points.length < 2) continue;
+                sbCtx.save();
+                if (s.tool === 'eraser') {
+                    sbCtx.globalCompositeOperation = 'destination-out';
+                    sbCtx.lineWidth = 26;
+                } else if (s.tool === 'highlighter') {
+                    sbCtx.strokeStyle = s.color;
+                    sbCtx.globalAlpha = 0.28;
+                    sbCtx.lineWidth = 22;
+                } else {
+                    sbCtx.strokeStyle = s.color;
+                    sbCtx.lineWidth = 4;
+                }
+                sbCtx.beginPath();
+                sbCtx.moveTo(s.points[0].x, s.points[0].y);
+                for (let i = 1; i < s.points.length; i++) {
+                    sbCtx.lineTo(s.points[i].x, s.points[i].y);
+                }
+                sbCtx.stroke();
+                sbCtx.restore();
+            }
+        }
+
+        window.setSbTool = function(t) {
+            sbTool = t;
+            document.querySelectorAll('.sb-tool-btn').forEach(b => b.classList.remove('bg-blue-600', 'text-white'));
+            const el = document.getElementById('sb-tool-' + t);
+            if (el) el.classList.add('bg-blue-600', 'text-white');
+        };
+        window.setSbColor = function(c) { sbColor = c; if (sbTool === 'eraser') setSbTool('pen'); };
+        window.sbUndo = function() { sbStrokes.pop(); redrawSmartboard(); };
+        window.sbClear = function() { sbStrokes = []; redrawSmartboard(); };
+        window.sbDownload = function() {
+            const a = document.createElement('a');
+            a.download = 'Sahaltahalak_Board.png';
+            a.href = sbCanvas.toDataURL();
+            a.click();
+        };
+
+        sbCanvas.addEventListener('pointerdown', (e) => {
+            sbCanvas.setPointerCapture(e.pointerId);
+            sbDrawing = true;
+            currentStroke = { tool: sbTool, color: sbColor, points: [{ x: e.clientX, y: e.clientY }] };
+            sbStrokes.push(currentStroke);
+        });
+        sbCanvas.addEventListener('pointermove', (e) => {
+            if (!sbDrawing || !currentStroke) return;
+            const prev = currentStroke.points[currentStroke.points.length - 1];
+            const pt = { x: e.clientX, y: e.clientY };
+            currentStroke.points.push(pt);
+
+            sbCtx.save();
+            sbCtx.lineCap = 'round';
+            if (sbTool === 'eraser') { sbCtx.globalCompositeOperation = 'destination-out'; sbCtx.lineWidth = 26; }
+            else if (sbTool === 'highlighter') { sbCtx.strokeStyle = sbColor; sbCtx.globalAlpha = 0.28; sbCtx.lineWidth = 22; }
+            else { sbCtx.strokeStyle = sbColor; sbCtx.lineWidth = 4; }
+            sbCtx.beginPath();
+            sbCtx.moveTo(prev.x, prev.y);
+            sbCtx.lineTo(pt.x, pt.y);
+            sbCtx.stroke();
+            sbCtx.restore();
+        });
+        sbCanvas.addEventListener('pointerup', () => { sbDrawing = false; currentStroke = null; });
+
+        /* ============================================================================
+           7. PDF LIBRARY & LIGHTWEIGHT ANNOTATOR
+           ============================================================================ */
+        window.filterPdfLibrary = function(f) { activePdfFilter = f; renderPdfLibraryGrid(); };
+        function renderPdfLibraryGrid() {
+            const grid = document.getElementById('pdf-library-grid');
+            if (!grid) return;
+            const list = allPdfDocuments.filter(d => activePdfFilter === 'all' || d.category === activePdfFilter);
+            grid.innerHTML = list.map(doc => `
+                <div class="rounded-3xl p-5 bg-[#2b0b10]/95 border border-amber-400/30 space-y-3">
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-[#f4cd6d]/20 text-[#f4cd6d]">${doc.category === 'book' ? '📘 كتاب المدرسة' : '📝 تقييم أسبوعي'}</span>
+                    <h3 class="text-sm font-black text-white">${doc.title}</h3>
+                    <button onclick="playUiClick(); openPdfInEditor('${doc.id}')" class="w-full py-2.5 rounded-xl bg-[#f4cd6d] text-slate-950 font-black text-xs">فتح الملف</button>
+                </div>
+            `).join('');
+        }
+
+        let currentPdfDoc = null, currentPdfObj = null, pdfCurrentPage = 1, pdfTotalPages = 1, pdfTool = 'pen', pdfPenColor = '#ef4444', pdfDrawing = false, pdfPrevPt = null;
+        const pdfRenderCanvas = document.getElementById('pdf-render-canvas'), pdfRenderCtx = pdfRenderCanvas.getContext('2d');
+        const pdfAnnotateCanvas = document.getElementById('pdf-annotate-canvas'), pdfAnnotateCtx = pdfAnnotateCanvas.getContext('2d');
+
+        window.openPdfInEditor = async function(id) {
+            const doc = allPdfDocuments.find(d => d.id === id);
+            if (!doc) return;
+            currentPdfObj = doc; pdfCurrentPage = 1;
+            document.getElementById('pdf-studio-title').innerText = doc.title;
+            document.getElementById('pdf-editor-studio').classList.remove('hidden');
+            if (doc.fileData && window.pdfjsLib) {
+                currentPdfDoc = await pdfjsLib.getDocument({ data: doc.fileData.slice(0) }).promise;
+                pdfTotalPages = currentPdfDoc.numPages;
+            } else {
+                currentPdfDoc = null; pdfTotalPages = doc.pages ? doc.pages.length : 1;
+            }
+            renderActivePdfPage();
+        };
+        async function renderActivePdfPage() {
+            document.getElementById('pdf-page-indicator').innerText = `${pdfCurrentPage} / ${pdfTotalPages}`;
+            if (currentPdfDoc) {
+                const page = await currentPdfDoc.getPage(pdfCurrentPage);
+                const vp = page.getViewport({ scale: 1.3 });
+                pdfRenderCanvas.width = vp.width; pdfRenderCanvas.height = vp.height;
+                pdfAnnotateCanvas.width = vp.width; pdfAnnotateCanvas.height = vp.height;
+                await page.render({ canvasContext: pdfRenderCtx, viewport: vp }).promise;
+            } else if (currentPdfObj && currentPdfObj.pages) {
+                const p = currentPdfObj.pages[pdfCurrentPage - 1] || currentPdfObj.pages[0];
+                pdfRenderCanvas.width = 760; pdfRenderCanvas.height = 900;
+                pdfAnnotateCanvas.width = 760; pdfAnnotateCanvas.height = 900;
+                pdfRenderCtx.fillStyle = '#fff'; pdfRenderCtx.fillRect(0, 0, 760, 900);
+                pdfRenderCtx.fillStyle = '#0f172a'; pdfRenderCtx.font = 'bold 20px Cairo'; pdfRenderCtx.textAlign = 'right';
+                pdfRenderCtx.fillText(p.heading, 720, 65);
+                pdfRenderCtx.font = '17px Cairo';
+                p.lines.forEach((l, i) => pdfRenderCtx.fillText(l, 720, 130 + i * 42));
+            }
+        }
+        window.changePdfPage = function(d) { const n = pdfCurrentPage + d; if (n >= 1 && n <= pdfTotalPages) { pdfCurrentPage = n; renderActivePdfPage(); } };
+        window.closePdfStudio = function() { document.getElementById('pdf-editor-studio').classList.add('hidden'); };
+        window.setPdfTool = function(t) { pdfTool = t; };
+        window.exportAnnotatedPdfPage = function() {
+            const m = document.createElement('canvas'); m.width = pdfRenderCanvas.width; m.height = pdfRenderCanvas.height;
+            const c = m.getContext('2d'); c.drawImage(pdfRenderCanvas, 0, 0); c.drawImage(pdfAnnotateCanvas, 0, 0);
+            const a = document.createElement('a'); a.download = 'Sahaltahalak_PDF.png'; a.href = m.toDataURL(); a.click();
+        };
+        pdfAnnotateCanvas.addEventListener('pointerdown', (e) => {
+            const r = pdfAnnotateCanvas.getBoundingClientRect();
+            pdfDrawing = true; pdfPrevPt = { x: (e.clientX - r.left) * (pdfAnnotateCanvas.width / r.width), y: (e.clientY - r.top) * (pdfAnnotateCanvas.height / r.height) };
+        });
+        pdfAnnotateCanvas.addEventListener('pointermove', (e) => {
+            if (!pdfDrawing) return;
+            const r = pdfAnnotateCanvas.getBoundingClientRect();
+            const x = (e.clientX - r.left) * (pdfAnnotateCanvas.width / r.width), y = (e.clientY - r.top) * (pdfAnnotateCanvas.height / r.height);
+            pdfAnnotateCtx.save(); pdfAnnotateCtx.lineCap = 'round';
+            if (pdfTool === 'eraser') { pdfAnnotateCtx.globalCompositeOperation = 'destination-out'; pdfAnnotateCtx.lineWidth = 24; }
+            else if (pdfTool === 'highlighter') { pdfAnnotateCtx.strokeStyle = pdfPenColor; pdfAnnotateCtx.globalAlpha = 0.28; pdfAnnotateCtx.lineWidth = 20; }
+            else { pdfAnnotateCtx.strokeStyle = pdfPenColor; pdfAnnotateCtx.lineWidth = 3; }
+            pdfAnnotateCtx.beginPath(); pdfAnnotateCtx.moveTo(pdfPrevPt.x, pdfPrevPt.y); pdfAnnotateCtx.lineTo(x, y); pdfAnnotateCtx.stroke(); pdfAnnotateCtx.restore();
+            pdfPrevPt = { x, y };
+        });
+        pdfAnnotateCanvas.addEventListener('pointerup', () => { pdfDrawing = false; });
+
+        /* ============================================================================
+           8. SUPPORT, AUTH & ADMIN COMMANDS
+           ============================================================================ */
+        window.submitSupportTicket = function() {
+            const category = document.getElementById('sup-category').value;
+            const contact = document.getElementById('sup-contact').value.trim() || appState.studentProfile.name;
+            const details = document.getElementById('sup-details').value.trim();
+            if (!details) return;
+            appState.supportTickets.unshift({ id: 'TCK-' + Math.floor(100 + Math.random() * 900), category, contact, details, status: 'قيد المراجعة', reply: '', date: new Date().toLocaleDateString('ar-EG') });
+            document.getElementById('sup-details').value = '';
+            saveState(); renderSupportTickets();
+            showNotification('تم الإرسال', 'وصل بلاغك لفريق الدعم الفني.');
+        };
+
+        function renderSupportTickets() {
+            const box = document.getElementById('student-tickets-list');
+            if (box) {
+                box.innerHTML = appState.supportTickets.map(t => `<div class="p-3.5 rounded-2xl bg-black/35 border border-white/10 text-xs space-y-1.5"><div class="flex justify-between font-black text-[#f4cd6d]"><span>${t.id} • ${t.category}</span><span>${t.status}</span></div><p>${t.details}</p>${t.reply ? `<div class="p-2 rounded-xl bg-emerald-500/20 text-emerald-300 font-bold">رد الإدارة: ${t.reply}</div>` : ''}</div>`).join('');
+            }
+            const abox = document.getElementById('admin-tickets-list');
+            if (abox) {
+                abox.innerHTML = appState.supportTickets.map((t, idx) => `<div class="p-3.5 rounded-2xl bg-black/40 border border-white/10 text-xs space-y-2"><div class="font-black text-[#f4cd6d]">${t.id} — ${t.contact}</div><p>${t.details}</p><div class="flex gap-2"><input type="text" id="rep-${idx}" value="${t.reply || ''}" placeholder="رد المشرف..." class="flex-1 bg-slate-900 rounded-xl px-3 py-1.5 text-white"><button onclick="appState.supportTickets[${idx}].reply=document.getElementById('rep-${idx}').value; appState.supportTickets[${idx}].status='تم الرد'; saveState(); renderSupportTickets();" class="px-3 py-1.5 rounded-xl bg-emerald-600 font-black">رد</button></div></div>`).join('');
+            }
+        }
+
+        window.openAuthModal = function(r = 'student') { const m = document.getElementById('auth-modal'); m.classList.remove('hidden'); m.classList.add('flex'); switchAuthRole(r); };
+        window.closeAuthModal = function() { const m = document.getElementById('auth-modal'); m.classList.add('hidden'); m.classList.remove('flex'); };
+        window.switchAuthRole = function(r) {
+            ['student', 'teacher', 'developer'].forEach(x => { document.getElementById('auth-form-' + x).classList.add('hidden'); document.getElementById('role-tab-' + x).classList.remove('bg-[#f4cd6d]', 'text-slate-950'); });
+            document.getElementById('auth-form-' + r).classList.remove('hidden'); document.getElementById('role-tab-' + r).classList.add('bg-[#f4cd6d]', 'text-slate-950');
+        };
+        window.sendStudentSmsOtp = function() {
+            const name = document.getElementById('stu-name-inp').value.trim(), phone = document.getElementById('stu-phone-inp').value.trim(), parent = document.getElementById('stu-parent-inp').value.trim();
+            if (!name || !phone || !parent) { showNotification('تنبيه', 'أدخل جميع البيانات.'); return; }
+            generatedSmsOtp = Math.floor(100000 + Math.random() * 900000).toString();
+            pendingStudentData = { name, stuPhone: phone, parentPhone: parent };
+            document.getElementById('otp-verify-box').classList.remove('hidden');
+            document.getElementById('sms-popup-text').innerText = `كود تفعيل الطالب (${name}):`;
+            document.getElementById('sms-popup-code').innerText = generatedSmsOtp;
+            document.getElementById('sms-popup-banner').classList.remove('hidden');
+        };
+        window.verifyStudentOtp = function() {
+            if (document.getElementById('stu-otp-inp').value.trim() === generatedSmsOtp && pendingStudentData) {
+                appState.studentProfile.name = pendingStudentData.name;
+                document.getElementById('header-user-name').innerText = pendingStudentData.name;
+                document.getElementById('sms-popup-banner').classList.add('hidden');
+                closeAuthModal(); addStudentXp(100);
+                triggerAdminTelemetryAlert({ name: pendingStudentData.name, role: 'طالب', stuPhone: pendingStudentData.stuPhone, parentPhone: pendingStudentData.parentPhone, method: 'SMS' }, false);
+            }
+        };
+        window.loginTeacher = function() {
+            const n = document.getElementById('teacher-name-inp').value.trim() || 'معلم';
+            document.getElementById('header-user-name').innerText = n; closeAuthModal();
+        };
+        window.loginDeveloper = function() {
+            if (document.getElementById('dev-pass-inp').value.trim() === 'hassan010' && document.getElementById('dev-code-inp').value.trim() === 'hassanelqodwa1') {
+                isDeveloperLoggedIn = true;
+                document.getElementById('header-user-name').innerText = 'المشرف';
+                const devBtn = document.getElementById('nav-dev-btn');
+                devBtn.classList.remove('hidden'); devBtn.classList.add('flex');
+                initDevPanel(); closeAuthModal(); navigateTo('developer');
+            } else showNotification('خطأ', 'بيانات المطور غير صحيحة.');
+        };
+
+        window.triggerAdminTelemetryAlert = function(entry, openWa) {
+            const phone = (appState.settings.adminPhone || '01050489662').replace(/\D/g, '').replace(/^0/, '20');
+            const msg = `🔔 إشعار سهلتهالك بخطوه:\nالاسم: ${entry.name}\nالهاتف: ${entry.stuPhone}\nولي الأمر: ${entry.parentPhone}`;
+            const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+            document.getElementById('admin-alert-text').innerText = `${entry.name} (${entry.role})`;
+            document.getElementById('admin-wa-direct-link').href = waUrl;
+            document.getElementById('admin-alert-toast').classList.remove('hidden');
+            if (openWa) window.open(waUrl, '_blank', 'noopener');
+        };
+
+        window.switchDevTab = function(t) {
+            ['media', 'pdfupload', 'supportmgr', 'curriculum', 'branding'].forEach(x => {
+                const p = document.getElementById('devpanel-' + x); if (p) { p.classList.add('hidden'); p.classList.remove('grid'); }
+                const b = document.getElementById('devtab-' + x); if (b) { b.classList.remove('bg-[#f4cd6d]', 'text-slate-950'); b.classList.add('text-white'); }
+            });
+            const ap = document.getElementById('devpanel-' + t); if (ap) { ap.classList.remove('hidden'); ap.classList.add('grid'); }
+            const ab = document.getElementById('devtab-' + t); if (ab) { ab.classList.add('bg-[#f4cd6d]', 'text-slate-950'); ab.classList.remove('text-white'); }
+        };
+
+        function initDevPanel() {
+            const subOpts = appState.curriculum.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+            document.getElementById('admin-media-subject').innerHTML = subOpts;
+            document.getElementById('cms-sub-select').innerHTML = subOpts;
+            document.getElementById('dev-pdf-subject').innerHTML = appState.curriculum.map(s => `<option value="${s.name}">${s.name}</option>`).join('');
+            populateCmsUnits(); renderAdminMediaList(); renderSupportTickets(); renderCmsCurriculumTree();
+            document.getElementById('dev-pdf-manage-list').innerHTML = allPdfDocuments.map(d => `<div class="p-2 rounded bg-slate-900 text-xs">${d.title}</div>`).join('');
+        }
+
+        window.toggleAdminMediaFields = function() {
+            document.getElementById('admin-media-file-box').classList.toggle('hidden', document.getElementById('admin-media-type').value !== 'image');
+        };
+        window.adminAddMediaResource = function() {
+            const subjectId = document.getElementById('admin-media-subject').value;
+            const type = document.getElementById('admin-media-type').value;
+            const title = document.getElementById('admin-media-title').value.trim();
+            const url = document.getElementById('admin-media-url').value.trim();
+            const file = document.getElementById('admin-media-file').files[0];
+            if (!title) return;
+            if (type === 'image' && file) {
+                const r = new FileReader();
+                r.onload = (e) => { appState.subjectResources.unshift({ subjectId, type: 'image', title, url: e.target.result }); saveState(); renderAdminMediaList(); };
+                r.readAsDataURL(file); return;
+            }
+            if (!url) return;
+            appState.subjectResources.unshift({ subjectId, type, title, url });
+            saveState(); renderAdminMediaList();
+            showNotification('تم النشر', 'تمت إضافة المحتوى للمادة.');
+        };
+        function renderAdminMediaList() {
+            document.getElementById('admin-media-list').innerHTML = appState.subjectResources.map((r, i) => `<div class="flex justify-between p-2 rounded bg-slate-900 text-xs"><span>${r.title}</span><button onclick="appState.subjectResources.splice(${i},1);saveState();renderAdminMediaList();" class="text-rose-400">حذف</button></div>`).join('');
+        }
+        window.handlePdfFileSelection = function(f) { queuedPdfFiles = f ? Array.from(f) : []; };
+        window.uploadQueuedPdfFiles = async function() {
+            const category = document.getElementById('dev-pdf-category').value;
+            const subjectName = document.getElementById('dev-pdf-subject').value;
+            for (const f of queuedPdfFiles) {
+                const buf = await f.arrayBuffer();
+                allPdfDocuments.unshift({ id: 'pdf_' + Date.now(), title: f.name.replace(/\.pdf$/i, ''), subjectName, category, fileData: buf });
+            }
+            queuedPdfFiles = []; renderPdfLibraryGrid(); initDevPanel();
+            showNotification('تم الرفع', 'تم إضافة ملف PDF.');
+        };
+        window.populateCmsUnits = function() {
+            const sub = appState.curriculum.find(s => s.id === document.getElementById('cms-sub-select').value);
+            if (sub) document.getElementById('cms-unit-select').innerHTML = sub.units.map((u, i) => `<option value="${i}">${u.unitName}</option>`).join('');
+        };
+        window.cmsAddLesson = function() {
+            const sub = appState.curriculum.find(s => s.id === document.getElementById('cms-sub-select').value);
+            const uIdx = Number(document.getElementById('cms-unit-select').value);
+            const title = document.getElementById('cms-lesson-title').value.trim();
+            const body = document.getElementById('cms-lesson-body').value.trim();
+            if (!sub || !title || !body) return;
+            const q = document.getElementById('cms-quiz-q').value.trim();
+            const opts = document.getElementById('cms-quiz-opts').value.split('،').map(s => s.trim()).filter(Boolean);
+            sub.units[uIdx].lessons.push({ title, subtitle: '', videoUrl: document.getElementById('cms-lesson-video').value.trim(), body: `<p>${body}</p>`, quiz: q && opts.length >= 2 ? [{ q, options: opts, ans: 0 }] : [] });
+            saveState(); applyAllUI(); renderCmsCurriculumTree();
+        };
+        function renderCmsCurriculumTree() {
+            document.getElementById('cms-curriculum-tree').innerHTML = appState.curriculum.map((s, si) => `<div class="p-2 rounded bg-slate-900 text-xs mb-1"><strong class="text-[#f4cd6d]">${s.name}</strong>${s.units.map((u, ui) => u.lessons.map((l, li) => `<div class="flex justify-between pr-2"><span>${l.title}</span><button onclick="appState.curriculum[${si}].units[${ui}].lessons.splice(${li},1);saveState();renderCmsCurriculumTree();" class="text-rose-400">x</button></div>`).join('')).join('')}</div>`).join('');
+        }
+        window.saveAndApplyDevConfig = function() {
+            appState.settings.brandName = document.getElementById('dev-inp-brand').value.trim() || 'سهلتهالك بخطوه';
+            appState.settings.footerCredit = document.getElementById('dev-inp-footer').value.trim() || 'عمل وتطوير تيم القدوه Hassanelngar';
+            appState.settings.maintenanceMode = document.getElementById('dev-tog-maintenance').checked;
+            appState.settings.adminPhone = document.getElementById('dev-admin-phone').value.trim() || '01050489662';
+            saveState(); applyAllUI(); showNotification('تم الحفظ', 'تم تطبيق التعديلات.');
+        };
+
+        function showNotification(title, body) {
+            const toast = document.getElementById('app-toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-body').innerText = body;
+            toast.classList.remove('hidden');
+            clearTimeout(window._tTimer);
+            window._tTimer = setTimeout(() => toast.classList.add('hidden'), 4200);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            applyAllUI();
+        });
+    </script>
+</body>
+</html>
